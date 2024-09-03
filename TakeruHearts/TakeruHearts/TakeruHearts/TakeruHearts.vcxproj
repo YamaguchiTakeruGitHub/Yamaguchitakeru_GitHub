@@ -141,8 +141,9 @@
   <ItemGroup>
     <ClCompile Include="Animation\AnimationManager.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
-    <ClCompile Include="SkyDome.cpp" />
-    <ClCompile Include="SoundMaster.cpp" />
+    <ClCompile Include="Object\map\GrassLand.cpp" />
+    <ClCompile Include="Object\map\SkyDome.cpp" />
+    <ClCompile Include="Sound\SoundMaster.cpp" />
     <ClCompile Include="Sound\SoundManager.cpp" />
     <ClCompile Include="TKRLib\ColliderDataSphere.cpp" />
     <ClCompile Include="Object\Enemy\Mischar.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="TKRLib\Rigidbody.cpp" />
     <ClCompile Include="TKRLib\Collidable.cpp" />
     <ClCompile Include="TKRLib\Physics.cpp" />
+    <ClCompile Include="Object\map\Tree.cpp" />
     <ClCompile Include="UI\Button\Button.cpp" />
     <ClCompile Include="Config\Config.cpp" />
     <ClCompile Include="UI\Image\Image.cpp" />
@@ -174,8 +176,9 @@
     <ClInclude Include="Animation\AnimationData.h" />
     <ClInclude Include="Animation\AnimationManager.h" />
     <ClInclude Include="Camera\Camera.h" />
-    <ClInclude Include="SkyDome.h" />
-    <ClInclude Include="SoundMaster.h" />
+    <ClInclude Include="Object\map\GrassLand.h" />
+    <ClInclude Include="Object\map\SkyDome.h" />
+    <ClInclude Include="Sound\SoundMaster.h" />
     <ClInclude Include="Sound\SoundData.h" />
     <ClInclude Include="Sound\SoundManager.h" />
     <ClInclude Include="TKRLib\ColliderDataSphere.h" />
@@ -193,6 +196,7 @@
     <ClInclude Include="TKRLib\Collidable.h" />
     <ClInclude Include="TKRLib\Physics.h" />
     <ClInclude Include="TKRLib\TKRLib.h" />
+    <ClInclude Include="Object\map\Tree.h" />
     <ClInclude Include="UI\Button\Button.h" />
     <ClInclude Include="Config\Config.h" />
     <ClInclude Include="UI\Image\Image.h" />

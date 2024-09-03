@@ -11,6 +11,7 @@ SceneGame::SceneGame()
 	m_FirstMap = new FirstMap;
 	m_Mischar = new Mischar;
 	m_SkyDome = new SkyDome;
+	m_Tree = new Tree;
 
 }
 
@@ -29,16 +30,20 @@ SceneGame::~SceneGame()
 	delete(m_Mischar);
 	m_SkyDome = nullptr;
 	delete(m_SkyDome);
+	m_Tree = nullptr;
+	delete(m_Tree);
 }
 
 void SceneGame::Init()
 {
 	DrawFormatString(0, 40, 0xffffff, "Game‰Šú‰»");
+
 	idm->Init();
 	player->Init(physics);
+	m_SkyDome->Init();
 	m_FirstMap->Init(physics);
 	m_Mischar->Init(physics);
-	m_SkyDome->Init();
+	m_Tree->Init();
 }
 
 void SceneGame::Update()
@@ -47,6 +52,9 @@ void SceneGame::Update()
 	DrawFormatString(0, 60, 0xffffff, "GameXV");
 
 	physics->Update();
+
+	m_SkyDome->Update();
+
 	idm->Update();
 	player->Update();
 	//m_camera->Update();
@@ -54,26 +62,29 @@ void SceneGame::Update()
 	m_camera->Rotate(idm->joypad->GetRightStickX(), idm->joypad->GetRightStickY());
 	m_FirstMap->Update();
 	m_Mischar->Update();
-	m_SkyDome->UpDate(player->GetPos());
+	m_Tree->Update();
 }
 
 void SceneGame::Draw()
 {
 	DrawFormatString(0, 80, 0xffffff, "Game•`‰æ");
+	TKRLib::DebugDraw::Draw();
 	idm->Draw();
+
 	player->Draw();
 	m_FirstMap->Draw();
 	m_Mischar->Draw();
 	m_SkyDome->Draw();
-	TKRLib::DebugDraw::Draw();
+	m_Tree->Draw();
 }
 
 void SceneGame::End()
 {
 	DrawFormatString(0, 100, 0xffffff, "Game‰ð•ú");
 	idm->End();
+	m_SkyDome->Final();
 	player->Final(physics);
 	m_FirstMap->Final(physics);
 	m_Mischar->Final(physics);
-	m_SkyDome->Final();
+	m_Tree->Final();
 }

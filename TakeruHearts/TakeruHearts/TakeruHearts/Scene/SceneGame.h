@@ -5,7 +5,8 @@
 #include "../Camera/Camera.h"
 #include "../Object/map/FirstMap.h"
 #include "../Object/Enemy/Mischar.h"
-#include "../SkyDome.h"
+#include "../Object/map/SkyDome.h"
+#include "../Object/map/Tree.h"
 
 
 class SceneGame final
@@ -27,7 +28,7 @@ private:
 	FirstMap* m_FirstMap;
 	Mischar* m_Mischar;
 	SkyDome* m_SkyDome;
-
+	Tree* m_Tree;
 };
 
 

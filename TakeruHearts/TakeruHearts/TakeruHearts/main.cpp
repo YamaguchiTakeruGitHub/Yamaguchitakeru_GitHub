@@ -55,6 +55,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	
 	SetDrawScreen(DX_SCREEN_BACK);
 
+	// 背景の色を灰色にする
+	SetBackgroundColor(128, 128, 128);
 
 	//初期化（開始）
 	//構造体のインスタンス作成
