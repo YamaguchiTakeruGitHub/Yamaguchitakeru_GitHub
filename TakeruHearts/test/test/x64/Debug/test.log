@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\fko2347069\Takeru\自習用\TakeruHearts\TakeruHearts\test\test\main.cpp(75,17): warning C4834: 'nodiscard' 属性を持つ関数の戻り値を破棄しています
+  test.vcxproj -> C:\Users\fko2347069\Takeru\自習用\TakeruHearts\TakeruHearts\test\x64\Debug\test.exe
