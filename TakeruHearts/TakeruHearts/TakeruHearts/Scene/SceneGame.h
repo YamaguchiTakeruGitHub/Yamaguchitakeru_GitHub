@@ -30,7 +30,5 @@ private:
 	Mischar* m_Mischar;
 	SkyDome* m_SkyDome;
 	Tree* m_Tree;
-	
+
 };
-
-

@@ -15,12 +15,12 @@ public:
 	void Final(TKRLib::Physics* physics);
 	void Update();
 	void Draw();
-	
+
 	//衝突したとき
 	void OnCollide(const Collidable& colider) override;
 	//プレイヤーのポジション
 	const VECTOR& GetPos() const { return rigidbody.GetPos(); }
-	
+
 private:
 	bool isMove;
 	float modelHandle;
@@ -31,6 +31,4 @@ private:
 
 
 };
-
-
 

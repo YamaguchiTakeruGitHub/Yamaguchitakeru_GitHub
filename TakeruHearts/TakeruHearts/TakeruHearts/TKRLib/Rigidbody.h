@@ -6,7 +6,7 @@ namespace TKRLib
 	{
 	public:
 		Rigidbody();
-		
+
 		void Init();
 
 		const VECTOR& GetPos() const { return position; }

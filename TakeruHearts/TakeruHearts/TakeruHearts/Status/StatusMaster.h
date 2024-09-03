@@ -1,25 +1,25 @@
 #pragma once
 
 namespace Status
-{ 
-
-class StatusMaster
 {
-public:
-	StatusMaster();
 
-	void Init();
+	class StatusMaster
+	{
+	public:
+		StatusMaster();
 
-	const float& GetHP() const { return HitPoint; }
-	const float& GetMP() const { return MagicPoint; }
+		void Init();
 
-	void SetHP(const float& set) { HitPoint = set; }
-	void SetMP(const float& set) { MagicPoint = set; }
+		const float& GetHP() const { return HitPoint; }
+		const float& GetMP() const { return MagicPoint; }
 
-private:
-	float HitPoint;
-	float MagicPoint;
+		void SetHP(const float& set) { HitPoint = set; }
+		void SetMP(const float& set) { MagicPoint = set; }
 
-};
+	private:
+		float HitPoint;
+		float MagicPoint;
+
+	};
 
 }

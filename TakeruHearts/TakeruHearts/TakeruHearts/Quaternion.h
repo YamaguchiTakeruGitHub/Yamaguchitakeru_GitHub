@@ -9,7 +9,7 @@ namespace mat
 		float w, x, y, z;
 
 		Quaternion();
-		
+
 
 	};
 }

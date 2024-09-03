@@ -13,7 +13,7 @@
 Camera::Camera()
 	: fov(60.0f)
 	, fovRad(0.0f)
-	, pos(VGet(0,0,0))
+	, pos(VGet(0, 0, 0))
 	, posRad(0.0f)
 	, offset(VGet(0.0f, 5.0f, -20.0f))
 	, targetPos(VGet(0.0f, 0.0f, 0.0f))
@@ -29,7 +29,7 @@ Camera::~Camera()
 
 void Camera::Init(VECTOR playerPos)
 {
-	offset = VGet(0.0f, 10.0f, - 20.0f);
+	offset = VGet(0.0f, 10.0f, -20.0f);
 	pos = VAdd(playerPos, offset);
 	targetPos = playerPos;
 	SetCameraPositionAndTarget_UpVecY(pos, targetPos);

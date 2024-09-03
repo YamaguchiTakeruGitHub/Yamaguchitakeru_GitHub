@@ -1,9 +1,9 @@
 #include "Rigidbody.h"
 
 TKRLib::Rigidbody::Rigidbody()
-	: position(VGet(0,0,0))
-	, direction(VGet(0,0,0))
-	, velocity(VGet(0,0,0))
+	: position(VGet(0, 0, 0))
+	, direction(VGet(0, 0, 0))
+	, velocity(VGet(0, 0, 0))
 {
 }
 

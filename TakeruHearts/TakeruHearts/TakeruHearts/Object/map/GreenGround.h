@@ -19,7 +19,7 @@ namespace Ground
 
 		void OnCollide(const Collidable& collider) override;
 		const VECTOR& GetPos() const { return rigidbody.GetPos(); }
-		
+
 	private:
 
 	};

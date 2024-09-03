@@ -29,7 +29,7 @@ namespace TKRLib
 		virtual void Final(TKRLib::Physics* physics);
 
 		virtual void OnCollide(const Collidable& colider) abstract;
-		
+
 		GameObjectTag GetTag() const { return tag; }
 		Priority GetPriority() const { return priority; }
 

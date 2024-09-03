@@ -7,7 +7,7 @@ TKRLib::Collidable::Collidable(Priority priority, GameObjectTag tag, ColliderDat
 	: priority(priority)
 	, tag(tag)
 	, colliderData(nullptr)
-	, nextPos(VGet(0,0,0))
+	, nextPos(VGet(0, 0, 0))
 {
 	CreateColliderData(colliderKind);
 }

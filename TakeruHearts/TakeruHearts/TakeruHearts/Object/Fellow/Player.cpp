@@ -21,7 +21,7 @@ void Player::Init(TKRLib::Physics* physics)
 	physics->Entry(this);
 
 	modelHandle = MV1LoadModel("../Data/Asset/model/Character/Player/Knight.mv1");
-	
+
 	rigidbody.Init();
 	rigidbody.SetPos(VGet(0.0f, 0.0f, 100.0f));
 
@@ -33,11 +33,11 @@ void Player::Init(TKRLib::Physics* physics)
 
 void Player::Final(TKRLib::Physics* physics)
 {
-	
+
 	physics->Exit(this);
 	MV1DeleteModel(modelHandle);
 	idm->End();
-	
+
 
 	idm = nullptr;
 	delete idm;
@@ -59,7 +59,7 @@ void Player::Update()
 
 
 	VECTOR dir = VGet(0.0f, 0.0f, 0.0f);
-	
+
 	dir.x = 0;
 	dir.y = 0;
 	dir.z = 0;
@@ -84,7 +84,7 @@ void Player::Update()
 	MATRIX cameraRotation = MGetRotY(m_camera->GetCameraHAngle());
 
 	dir = VTransform(dir, cameraRotation);
-	
+
 	if (VSquareSize(dir) > 0)
 	{
 		VECTOR normalizedDir = VNorm(dir);
@@ -111,17 +111,17 @@ void Player::Update()
 
 #if _DEBUG
 	DrawFormatString(100, 100, 0xffffff, "Left Stick X: %f, Y: %f", leftSticX, leftSticY);
-	#endif
+#endif
 
 }
-	
+
 
 void Player::Draw()
 {
 	idm->Draw();
 	MV1DrawModel(modelHandle);
 	//DrawSphere3D(VGet(0.0f,0.0f,0.0f), 10.0f, 32, 0xffffff, 0xffffff, true);
-	
+
 #if _DEBUG
 	DrawFormatString(400, 420, 0xffffff, "x%f y%f z%f", rigidbody.GetPos().x, rigidbody.GetPos().y, rigidbody.GetPos().z);
 #endif

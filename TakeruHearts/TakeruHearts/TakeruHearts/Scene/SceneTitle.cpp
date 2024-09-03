@@ -2,24 +2,24 @@
 
 
 SceneTitle::SceneTitle()
-	: imgBG					(LoadGraph("../Data/Asset/img/TitleButtonRogo.png"))
-	, buttonPoint			(LoadGraph("../Data/Asset/img/buttonPoint.png"))
-	, nowSelect				()
-	, buttonPointPos		()
-	, NewGamePos			()
-	, LoadGamePos			()
-	, BackPos				()
-	, pushBefore			()
-	, pushNow				()
-	, isDUPButtonPressed	()
-	,isDDOWNButtonPressed	()
+	: imgBG(LoadGraph("../Data/Asset/img/TitleButtonRogo.png"))
+	, buttonPoint(LoadGraph("../Data/Asset/img/buttonPoint.png"))
+	, nowSelect()
+	, buttonPointPos()
+	, NewGamePos()
+	, LoadGamePos()
+	, BackPos()
+	, pushBefore()
+	, pushNow()
+	, isDUPButtonPressed()
+	, isDDOWNButtonPressed()
 {
 	DrawFormatString(0, 0, 0xffffff, "titleデストラクタ");
 }
 
 SceneTitle::~SceneTitle()
 {
-	DrawFormatString(0, 20, 0xffffff,"titleコンストラクタ");
+	DrawFormatString(0, 20, 0xffffff, "titleコンストラクタ");
 	DeleteGraph(imgBG);
 	DeleteGraph(buttonPoint);
 }
@@ -30,10 +30,10 @@ void SceneTitle::Init()
 	idm->Init();
 	imgBG;
 	buttonPoint;
-	buttonPointPos	= VGet(124.0f, 486.0f, 0.0f);
-	NewGamePos		= VGet(124.0f, 486.0f, 0.0f);
-	LoadGamePos		= VGet(124.0f, 553.0f, 0.0f);
-	BackPos			= VGet(124.0f, 621.0f, 0.0f);
+	buttonPointPos = VGet(124.0f, 486.0f, 0.0f);
+	NewGamePos = VGet(124.0f, 486.0f, 0.0f);
+	LoadGamePos = VGet(124.0f, 553.0f, 0.0f);
+	BackPos = VGet(124.0f, 621.0f, 0.0f);
 
 	nowSelect = eMenu_LoadGame;
 
@@ -48,7 +48,7 @@ void SceneTitle::Update()
 	DrawFormatString(0, 60, 0xffffff, "title更新");
 	idm->Update();
 
-	
+
 
 	//上が押された瞬間
 	if (idm->joypad->isDUP == true && !isDUPButtonPressed)
@@ -83,18 +83,18 @@ void SceneTitle::Update()
 		switch (nowSelect)
 		{
 		case eMenu_NewGame:
-			
+
 			break;
 
 		case eMenu_LoadGame:
 			break;
-		
+
 		case eMenu_Back:
 			DxLib_End();
 			break;
 		}
 	}
-	
+
 	//選択された項目の座標を格納
 	switch (nowSelect)
 	{
@@ -116,7 +116,7 @@ void SceneTitle::Draw()
 	DrawFormatString(0, 80, 0xffffff, "title描画");
 
 	idm->Draw();
-	DrawGraph(0,0,imgBG, true);
+	DrawGraph(0, 0, imgBG, true);
 
 
 
@@ -156,7 +156,7 @@ void SceneTitle::Draw()
 		}
 	}
 
-	
+
 }
 
 void SceneTitle::End()
@@ -166,5 +166,4 @@ void SceneTitle::End()
 	DeleteGraph(imgBG);
 	DeleteGraph(buttonPoint);
 }
-
 

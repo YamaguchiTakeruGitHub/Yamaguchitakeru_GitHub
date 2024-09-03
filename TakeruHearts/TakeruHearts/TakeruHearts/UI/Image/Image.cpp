@@ -1,14 +1,14 @@
 #include "Image.h"
 #include "DxLib.h"
 
-UI::Image::Image():
+UI::Image::Image() :
 	imageHandelContainer(-1)
 {
 }
 
 UI::Image::~Image()
 {
-	
+
 }
 
 void UI::Image::Init()

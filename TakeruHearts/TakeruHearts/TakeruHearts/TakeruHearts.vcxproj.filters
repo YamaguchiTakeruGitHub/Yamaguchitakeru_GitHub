@@ -13,165 +13,45 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\Scene">
-      <UniqueIdentifier>{15f3b2e2-81a5-454a-a9d6-3bbcb5f62501}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Scene">
-      <UniqueIdentifier>{f0e2639c-570e-4f1c-a670-0bb0d39c3ef7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\UI">
-      <UniqueIdentifier>{14f9e05e-f5b9-4afd-9afd-343a2d889552}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\UI">
-      <UniqueIdentifier>{19b36ffe-75b2-454c-a657-ff779884fd59}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\UI\Button">
-      <UniqueIdentifier>{2378a05b-4373-4b57-8d3d-aeb3709886b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\UI\Button">
-      <UniqueIdentifier>{ebb5b918-2927-4ebb-b1a7-dd521e0d6573}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Status">
-      <UniqueIdentifier>{72029450-50ff-48d6-b3ba-392223c224f0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Status">
-      <UniqueIdentifier>{c8db1a13-63d6-48af-8d03-ff299d3c1281}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\TKRLib">
-      <UniqueIdentifier>{feca92a6-0026-4615-9399-f455e507d6ac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Animation">
-      <UniqueIdentifier>{c5469b80-979a-4f18-98f4-0cbeca759af2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Animation">
-      <UniqueIdentifier>{5ba8c7e4-1254-4db0-a6c4-c8de4eb28833}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Config">
-      <UniqueIdentifier>{4c3a49f6-1b1d-468c-bd0b-f16298868b50}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Config">
-      <UniqueIdentifier>{67d8a88c-7af3-4ea8-958f-fab6f2b6d1ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\InputDevice">
-      <UniqueIdentifier>{0f0832b5-20d3-4f1f-9555-a8dda91659b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\InputDevice\Pad">
-      <UniqueIdentifier>{466dc001-840d-4e78-86b4-517a21adb0dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\InputDevice\KeyBoard">
-      <UniqueIdentifier>{5e847667-3e72-4e7d-87a7-570c91607e37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\UI\Image">
-      <UniqueIdentifier>{c8e84030-fd8b-4e30-864f-c6939ae4af26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\UI\Image">
-      <UniqueIdentifier>{f34cc096-64e5-441e-977f-fdaa440c216f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\InputDevice">
-      <UniqueIdentifier>{6ef28ac4-42f7-4fbe-8856-93d82fb5d5dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\InputDevice\Pad">
-      <UniqueIdentifier>{889bb834-c361-49d5-8f56-1f51704053bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\InputDevice\KeyBoard">
-      <UniqueIdentifier>{357a2c72-6989-457a-94bd-0bb93fe6e33d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\TKRLib\TKRLib">
-      <UniqueIdentifier>{f3894a69-9a12-4c37-8556-ca42cc4f5b5f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\SceneBase.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\SceneTitle.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\SceneGame.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\SceneResult.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\SceneManager.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Status\StatusMaster.cpp">
-      <Filter>ソース ファイル\Status</Filter>
-    </ClCompile>
-    <ClCompile Include="Config\Config.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="InputDevice\InputDeviceManager.cpp">
-      <Filter>ソース ファイル\InputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="InputDevice\Pad\JoyPad.cpp">
-      <Filter>ソース ファイル\InputDevice\Pad</Filter>
-    </ClCompile>
-    <ClCompile Include="InputDevice\KeyBoard\KeyBoard.cpp">
-      <Filter>ソース ファイル\InputDevice\KeyBoard</Filter>
-    </ClCompile>
-    <ClCompile Include="UI\Button\Button.cpp">
-      <Filter>ソース ファイル\UI\Button</Filter>
-    </ClCompile>
-    <ClCompile Include="UI\Image\Image.cpp">
-      <Filter>ソース ファイル\UI\Image</Filter>
-    </ClCompile>
-    <ClCompile Include="Effect\2D\FadeInAndFadeOut.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Fellow\Player.cpp">
+    <ClCompile Include="Animation\AnimationManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Camera\Camera.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Map\MapManager.cpp">
+    <ClCompile Include="Config\Config.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect\2D\FadeInAndFadeOut.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDevice\InputDeviceManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDevice\KeyBoard\KeyBoard.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDevice\Pad\JoyPad.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Map\MapBase.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TKRLib\Collidable.cpp">
-      <Filter>ヘッダー ファイル\TKRLib\TKRLib</Filter>
-    </ClCompile>
-    <ClCompile Include="TKRLib\DebugDraw.cpp">
-      <Filter>ヘッダー ファイル\TKRLib\TKRLib</Filter>
-    </ClCompile>
-    <ClCompile Include="TKRLib\Rigidbody.cpp">
-      <Filter>ヘッダー ファイル\TKRLib\TKRLib</Filter>
-    </ClCompile>
-    <ClCompile Include="TKRLib\Physics.cpp">
-      <Filter>ヘッダー ファイル\TKRLib\TKRLib</Filter>
-    </ClCompile>
-    <ClCompile Include="Animation\AnimationManager.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Quaternion.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\map\FirstMap.cpp">
+    <ClCompile Include="Map\MapManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Object\Enemy\Mischar.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TKRLib\ColliderDataSphere.cpp">
+    <ClCompile Include="Object\Fellow\Player.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Sound\SoundManager.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Sound\SoundMaster.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\map\SkyDome.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\map\Tree.cpp">
+    <ClCompile Include="Object\map\FirstMap.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Object\map\GrassLand.cpp">
@@ -180,123 +60,105 @@
     <ClCompile Include="Object\map\GreenGround.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ColliderDataBox.cpp">
+    <ClCompile Include="Object\map\SkyDome.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\map\Tree.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneGame.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneResult.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneTitle.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\SoundManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\SoundMaster.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Status\StatusMaster.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\Collidable.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\ColliderDataSphere.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\DebugDraw.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\Physics.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\Rigidbody.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Button\Button.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Image\Image.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\ColliderDataBox.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Light.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene\SceneBase.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\SceneTitle.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\SceneGame.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\SceneResult.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonScene.h">
+    <ClInclude Include="Animation\AnimationData.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\SceneManager.h">
-      <Filter>ヘッダー ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Status\StatusMaster.h">
-      <Filter>ヘッダー ファイル\Status</Filter>
-    </ClInclude>
-    <ClInclude Include="Config\Config.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="LocalTag.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="UI\Button\Button.h">
-      <Filter>ヘッダー ファイル\UI\Button</Filter>
-    </ClInclude>
-    <ClInclude Include="UI\Image\Image.h">
-      <Filter>ヘッダー ファイル\UI\Image</Filter>
-    </ClInclude>
-    <ClInclude Include="InputDevice\InputDeviceManager.h">
-      <Filter>ヘッダー ファイル\InputDevice</Filter>
-    </ClInclude>
-    <ClInclude Include="InputDevice\Pad\JoyPad.h">
-      <Filter>ヘッダー ファイル\InputDevice\Pad</Filter>
-    </ClInclude>
-    <ClInclude Include="InputDevice\KeyBoard\KeyBoard.h">
-      <Filter>ヘッダー ファイル\InputDevice\KeyBoard</Filter>
-    </ClInclude>
-    <ClInclude Include="Effect\2D\FadeInAndFadeOut.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Fellow\Player.h">
+    <ClInclude Include="Animation\AnimationManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Camera\Camera.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Map\MapManager.h">
+    <ClInclude Include="Config\Config.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect\2D\FadeInAndFadeOut.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDevice\InputDeviceManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDevice\KeyBoard\KeyBoard.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDevice\Pad\JoyPad.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Map\MapBase.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TKRLib\Rigidbody.h">
-      <Filter>ヘッダー ファイル\TKRLib</Filter>
-    </ClInclude>
-    <ClInclude Include="TKRLib\TKRLib.h">
-      <Filter>ヘッダー ファイル\TKRLib</Filter>
-    </ClInclude>
-    <ClInclude Include="TKRLib\Physics.h">
-      <Filter>ヘッダー ファイル\TKRLib</Filter>
-    </ClInclude>
-    <ClInclude Include="TKRLib\DebugDraw.h">
-      <Filter>ヘッダー ファイル\TKRLib</Filter>
-    </ClInclude>
-    <ClInclude Include="TKRLib\Collidable.h">
-      <Filter>ヘッダー ファイル\TKRLib</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation\AnimationManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation\AnimationData.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Quaternion.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\map\FirstMap.h">
+    <ClInclude Include="Map\MapManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Object\Enemy\Mischar.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TKRLib\ColliderData.h">
+    <ClInclude Include="Object\Fellow\Player.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TKRLib\GameObjectTag.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="TKRLib\ColliderDataSphere.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Sound\SoundManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Sound\SoundData.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Sound\SoundMaster.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\map\SkyDome.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\map\Tree.h">
+    <ClInclude Include="Object\map\FirstMap.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Object\map\GrassLand.h">
@@ -305,10 +167,82 @@
     <ClInclude Include="Object\map\GreenGround.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ColliderDataBox.h">
+    <ClInclude Include="Object\map\SkyDome.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\map\Tree.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneGame.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneResult.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneTitle.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundData.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundMaster.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Status\StatusMaster.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\TKRLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\Collidable.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\ColliderData.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\ColliderDataSphere.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\DebugDraw.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\GameObjectTag.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\Physics.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\Rigidbody.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Button\Button.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Image\Image.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\ColliderDataBox.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonScene.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Light.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalTag.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

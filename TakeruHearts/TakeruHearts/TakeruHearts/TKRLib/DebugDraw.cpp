@@ -20,14 +20,14 @@ void TKRLib::DebugDraw::Draw()
 			static_cast<int>(item.end.y),
 			item.color);
 	}
-	
+
 	for (const auto& item : sphereInfo)
 	{
-		DxLib::DrawSphere3D(item.center, 
-							item.radius, 
-							5, 
-							item.color,
-							item.color, false);
+		DxLib::DrawSphere3D(item.center,
+			item.radius,
+			5,
+			item.color,
+			item.color, false);
 	}
 
 }

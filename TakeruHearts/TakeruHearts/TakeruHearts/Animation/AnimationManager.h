@@ -6,23 +6,23 @@
 class AnimationManager
 {
 public:
-	
+
 private:
 	/// <summary>
 	/// ＜keyType, ValueType＞　KeyType＝箱　、ValueType＝値
 	/// </summary>
 	std::unordered_map<std::string, std::unordered_map<std::string, AnimationData>> animations;
-	
+
 	/// <summary>
 	/// ＜keyType, ValueType＞　KeyType＝箱　、ValueType＝値
 	/// </summary>
 	std::unordered_map<std::string, AnimationData> currentAnimations;
 
 public:
-	
+
 	void InitChangeAnimation(const std::string& characterName, int modelHandle);
-	
-	void ChangeAnimation(const std::string& characterName, const std::string& animationName);	
+
+	void ChangeAnimation(const std::string& characterName, const std::string& animationName);
 
 	void Update(float daltaTime);
 };

@@ -18,7 +18,7 @@ private:
 
 
 	int imgBG;
-	
+
 	int nowSelect;
 	bool isDUPButtonPressed;
 	bool isDDOWNButtonPressed;
@@ -37,7 +37,7 @@ private:
 
 
 
-	typedef enum 
+	typedef enum
 	{
 		eMenu_NewGame,
 		eMenu_LoadGame,
@@ -50,4 +50,3 @@ private:
 
 
 };
-

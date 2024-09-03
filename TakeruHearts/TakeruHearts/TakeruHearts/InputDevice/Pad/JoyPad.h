@@ -30,7 +30,7 @@ namespace InputDevice
 		DNONE = true,			//何もしてない
 	};
 
-	
+
 	class JoyPad
 	{
 	public:
@@ -54,10 +54,10 @@ namespace InputDevice
 		int Pad1;
 		int count;
 
-	
+
 	public:
 
-	
+
 
 
 		//別クラスで判定する用のフラグ
@@ -76,7 +76,7 @@ namespace InputDevice
 		bool isDRIGHT;
 		bool isDDOWN;
 		bool isDLEFT;
-	
+
 
 
 	private:

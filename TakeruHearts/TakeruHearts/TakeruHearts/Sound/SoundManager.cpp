@@ -72,7 +72,7 @@ void SoundManager::Update(float daltaTime)
 			{
 				//最初からサウンドを鳴らす
 				soundData.currentTime = soundData.startTime;
-				
+
 				//サウンドを繰り返す
 				isLoopSound = true;
 			}
@@ -86,6 +86,6 @@ void SoundManager::Update(float daltaTime)
 
 			}
 		}
-		
+
 	}
 }

@@ -18,7 +18,7 @@ InputDevice::JoyPad::JoyPad()
 	, isDRIGHT(false)
 	, isDDOWN(false)
 	, isDLEFT(false)
-	
+
 
 
 	, pisA(false)
@@ -168,10 +168,10 @@ void InputDevice::JoyPad::Update()
 	}
 
 	//特定のボタンが押されていない時はフラグをおろす
-	if (!pad.Buttons[PadButton::A] 
-		&& !pad.Buttons[PadButton::B] 
-		&& !pad.Buttons[PadButton::Y] 
-		&& !pad.Buttons[PadButton::X] 
+	if (!pad.Buttons[PadButton::A]
+		&& !pad.Buttons[PadButton::B]
+		&& !pad.Buttons[PadButton::Y]
+		&& !pad.Buttons[PadButton::X]
 		&& !pad.Buttons[PadButton::LB]
 		&& !pad.Buttons[PadButton::RB]
 		&& !pad.Buttons[PadButton::BACK]
@@ -229,7 +229,7 @@ void InputDevice::JoyPad::Update()
 
 	/*ジョイステック(strat)*/
 
-	
+
 
 	/*ジョイステック(end)*/
 

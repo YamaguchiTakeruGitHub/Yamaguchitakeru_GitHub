@@ -75,14 +75,14 @@ void TKRLib::Physics::Update()
 	//位置の確定
 	FixPosition();
 
-		//当たり判定の通知
+	//当たり判定の通知
 	for (auto& item : onCollideInfo)
 	{
 		//所有者から知らせる
 		item.owner->OnCollide(*item.colider);
 	}
 
-	
+
 }
 
 std::vector<TKRLib::Physics::OnCollideInfo> TKRLib::Physics::CheckColide() const
@@ -194,7 +194,14 @@ bool TKRLib::Physics::IsCollide(const Collidable* objA, const Collidable* objB) 
 		auto objBColliderData = dynamic_cast<ColliderDataSphere*>(objB->colliderData);
 		isHit = (atobLength < objAColliderData->radius + objBColliderData->radius);
 	}
-
+	else
+	if (aKind == TKRLib::ColliderData::Kind::Box && bKind == TKRLib::ColliderData::Kind::Box)
+	{
+		auto objAColliderData = dynamic_cast<ColliderDataBox*>(objA->colliderData);
+		auto objBColliderData = dynamic_cast<ColliderDataBox*>(objB->colliderData);
+	
+		isHit = CheckOBBCollision3D()
+	}
 
 	return isHit;
 }
@@ -252,4 +259,3 @@ void TKRLib::Physics::FixPosition()
 		item->rigidbody.SetPos(item->nextPos);
 	}
 }
-	

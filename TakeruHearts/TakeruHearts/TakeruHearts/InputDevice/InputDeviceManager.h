@@ -14,7 +14,7 @@ namespace InputDevice
 		void Update();
 		void Draw();
 		void End();
-		
+
 		JoyPad* joypad;
 		//KeyBoard* keyboard;
 

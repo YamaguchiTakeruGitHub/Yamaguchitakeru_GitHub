@@ -52,6 +52,6 @@ void AnimationManager::Update(float daltaTime)
 				animData.currentTime = animData.endTime;
 			}
 		}
-		
+
 	}
 }

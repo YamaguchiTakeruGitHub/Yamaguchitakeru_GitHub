@@ -5,22 +5,22 @@ SkyDome::SkyDome()
 	: modelHandle(-1)
 	, position()
 	, scale()
-	,rotate()
+	, rotate()
 {
 }
 
 SkyDome::~SkyDome()
 {
 	MV1DeleteModel(modelHandle);
-	
+
 }
 
 void SkyDome::Init()
 {
 	modelHandle = MV1LoadModel("../Data/Asset/model/mapSky/Skydome.mv1");
-	
+
 	position = VGet(50, 0, 0);
-	scale = VGet(0.2f,0.2f,0.2f);
+	scale = VGet(0.2f, 0.2f, 0.2f);
 	rotate = 0.0f;
 	//MEMO：サイズがでかすぎるのでマイナスする
 

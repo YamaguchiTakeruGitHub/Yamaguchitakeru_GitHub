@@ -1,12 +1,13 @@
+
 #include<DxLib.h>
 #include <../nlohmann/json.hpp>
+
 #include <fstream>
 #include <iostream>
 #include <cassert>
 #include <memory>
 
 #include "CommonScene.h"
-
 
 
 
@@ -22,10 +23,13 @@ struct GameConfig
 
 bool LoadConfig(const std::string& filename, GameConfig& config)
 {
-	std::ifstream padfile(filename,std::ios::binary);
+	std::ifstream padfile(filename, std::ios::binary);
 
 	if (!padfile.is_open())
 	{
+		MessageBox(NULL, "padfileが開けませんでした。", "エラー", MB_OK);
+
+
 		return false;
 	}
 
@@ -42,7 +46,7 @@ bool LoadConfig(const std::string& filename, GameConfig& config)
 }
 
 
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	SetWindowText("TakeruHearts");
 
@@ -50,9 +54,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 	if (DxLib_Init() == -1)
 	{
+		MessageBox(NULL, "DxLibの初期化に失敗しました。", "エラー", MB_OK);
 		return -1;
 	}
-	
+
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	// 背景の色を灰色にする
@@ -63,15 +68,23 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	GameConfig config;
 
 	//LoadConfigで指定のパスが開けなかった場合は１を返す
-	if (!LoadConfig("../Data/AllVariables/GameConfig.json", config))
+	/*if (!LoadConfig("../Data/AllVariables/GameConfig.json", config))
 	{
+		MessageBox(NULL, "LoadConfigで指定のパスが開けませんでした。", "エラー", MB_OK);
+
 		return 1;
-	}
+	}*/
 
 	//ウィンドウ画面の調整
-	SetGraphMode(config.screenWidth, config.screenHeight,16);
-	SetWindowSize(config.screenWidth, config.screenHeight);
-	
+	/*SetGraphMode(config.screenWidth, config.screenHeight, 16);
+	SetWindowSize(config.screenWidth, config.screenHeight);*/
+
+	SetGraphMode(1280, 720, 16);
+	SetWindowSize(1280, 720);
+
+	//MEMO：exeファイルが開けないのは外部ファイルの参照がうまくいってないから
+
+
 	//構造体のインスタンス作成
 	SceneManager sceneManager(std::make_unique<SceneTitle>());
 	sceneManager.Init();
@@ -89,7 +102,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 		//ゲーム処理（開始）
 
-		
+
 		sceneManager.Update();
 		sceneManager.Draw();
 		sceneManager.HondleInput();

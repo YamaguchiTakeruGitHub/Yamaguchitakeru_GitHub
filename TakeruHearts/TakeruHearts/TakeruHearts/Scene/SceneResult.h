@@ -1,7 +1,7 @@
 #pragma once
 #include "SceneBase.h"
 
-class SceneResult final 	
+class SceneResult final
 	:public SceneBase
 {
 public:

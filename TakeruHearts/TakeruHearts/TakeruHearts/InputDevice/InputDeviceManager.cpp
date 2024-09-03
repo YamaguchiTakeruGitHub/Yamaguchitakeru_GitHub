@@ -21,7 +21,7 @@ InputDeviceManager::~InputDeviceManager()
 void InputDeviceManager::Init()
 {
 	joypad->Init();
-//keyboard->Init();
+	//keyboard->Init();
 }
 
 void InputDeviceManager::Update()

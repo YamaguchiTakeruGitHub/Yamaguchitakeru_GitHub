@@ -3,7 +3,7 @@
 
 
 namespace TKRLib
-{ 
+{
 	class ColliderData;
 
 	class ColliderDataSphere : public ColliderData

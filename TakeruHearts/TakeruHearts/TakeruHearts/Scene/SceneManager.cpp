@@ -31,7 +31,7 @@ void SceneManager::SetScene(std::unique_ptr<SceneBase> scene)
 
 void SceneManager::HondleInput()
 {
-	if(count == 10)
+	if (count == 10)
 	{
 		SetScene(std::make_unique<SceneTitle>());//“¯‚¶‚­
 	}
@@ -53,7 +53,7 @@ void SceneManager::HondleInput()
 
 void SceneManager::Init()
 {
-	
+
 	if (currentScene)
 	{
 		currentScene->Init();

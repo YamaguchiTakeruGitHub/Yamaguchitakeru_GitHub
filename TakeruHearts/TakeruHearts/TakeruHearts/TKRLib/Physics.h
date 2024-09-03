@@ -34,9 +34,10 @@ namespace TKRLib
 
 		std::vector<OnCollideInfo> CheckColide() const;
 		bool IsCollide(const Collidable* objA, const Collidable* objB)const;
-		
+
 		void FixNextPosition(Collidable* primary, Collidable* secondary)const;
 		void FixPosition();
+
+		
 	};
 }
-

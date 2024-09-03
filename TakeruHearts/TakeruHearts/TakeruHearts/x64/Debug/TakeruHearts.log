@@ -1,8 +1,46 @@
-﻿  Player.cpp
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(23,28): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(38,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(93,21): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(110,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(122,15): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  TakeruHearts.vcxproj -> C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Debug\TakeruHearts.exe
+﻿  AnimationManager.cpp
+  ColliderDataBox.cpp
+  Light.cpp
+  Quaternion.cpp
+  Image.cpp
+  Button.cpp
+  Camera.cpp
+  Rigidbody.cpp
+  Physics.cpp
+  DebugDraw.cpp
+  ColliderDataSphere.cpp
+  Collidable.cpp
+  Config.cpp
+  FadeInAndFadeOut.cpp
+  GreenGround.cpp
+  GrassLand.cpp
+  FirstMap.cpp
+  InputDeviceManager.cpp
+  KeyBoard.cpp
+  JoyPad.cpp
+  コードを生成中...
+  コンパイル中...
+  main.cpp
+  MapManager.cpp
+  MapBase.cpp
+  Mischar.cpp
+  Player.cpp
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(23,28): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(38,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(93,21): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(110,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(122,15): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SkyDome.cpp
+  Tree.cpp
+  SceneTitle.cpp
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Scene\SceneTitle.cpp(123,44): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Scene\SceneTitle.cpp(123,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneResult.cpp
+  SceneManager.cpp
+  SceneGame.cpp
+  SceneBase.cpp
+  SoundMaster.cpp
+  SoundManager.cpp
+  StatusMaster.cpp
+  コードを生成中...
+  TakeruHearts.vcxproj -> C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Debug\TakeruHearts.exe

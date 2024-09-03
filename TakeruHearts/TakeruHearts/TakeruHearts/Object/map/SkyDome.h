@@ -15,10 +15,10 @@ public:
 
 private:
 	int modelHandle;
-	
+
 	VECTOR position;
 	VECTOR scale;
 
 	float rotate;
-	
+
 };
