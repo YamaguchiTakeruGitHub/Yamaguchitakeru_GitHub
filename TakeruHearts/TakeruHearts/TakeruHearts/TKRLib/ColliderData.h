@@ -11,7 +11,9 @@ namespace TKRLib
 		enum class Kind
 		{
 			Sphere,
-			Line2D			
+			Box,
+			Capsule,
+			Line2D
 		};
 
 		ColliderData(Kind kind) { this->kind = kind; }

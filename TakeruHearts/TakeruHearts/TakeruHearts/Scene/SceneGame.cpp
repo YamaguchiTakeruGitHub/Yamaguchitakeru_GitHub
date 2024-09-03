@@ -32,6 +32,7 @@ SceneGame::~SceneGame()
 	delete(m_SkyDome);
 	m_Tree = nullptr;
 	delete(m_Tree);
+
 }
 
 void SceneGame::Init()
@@ -53,7 +54,8 @@ void SceneGame::Update()
 
 	physics->Update();
 
-	m_SkyDome->Update();
+	//m_SkyDome->Update();
+	m_SkyDome->UpdateForcusPlayer(player->GetPos());
 
 	idm->Update();
 	player->Update();

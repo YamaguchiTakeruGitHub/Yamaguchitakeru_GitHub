@@ -39,6 +39,8 @@ public:
 	float GetCameraHAngle() const { return cameraHAngle; }
 	float GetCameraVAngle() const { return cameraVAngle; }
 
+	const VECTOR& GetPos() const { return pos; }
+
 
 private:
 	float fov;			//Ž‹–ìŠp

@@ -34,6 +34,8 @@ namespace TKRLib
 		Priority GetPriority() const { return priority; }
 
 	protected:
+
+		int modelHandle;
 		Rigidbody rigidbody;
 		ColliderData* colliderData;
 

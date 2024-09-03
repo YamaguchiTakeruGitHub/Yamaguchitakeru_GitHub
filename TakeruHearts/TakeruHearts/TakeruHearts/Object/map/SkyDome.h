@@ -9,16 +9,16 @@ public:
 
 	void Init();
 	void Update();
+	void UpdateForcusPlayer(VECTOR playerPos);
 	void Draw();
 	void Final();
 
 private:
 	int modelHandle;
-	int testModelHandel;
+	
 	VECTOR position;
 	VECTOR scale;
 
-	VECTOR position2;
-	VECTOR scale2;
+	float rotate;
+	
 };
-

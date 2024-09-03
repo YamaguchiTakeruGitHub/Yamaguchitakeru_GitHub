@@ -5,4 +5,5 @@ enum class GameObjectTag
 	Enemy,
 	SystemWall,
 	SystemMap,
+	SystemGround,
 };
