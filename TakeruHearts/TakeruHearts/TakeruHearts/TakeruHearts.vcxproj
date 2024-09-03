@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Animation\AnimationManager.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="GreenGround.cpp" />
     <ClCompile Include="Object\map\GrassLand.cpp" />
     <ClCompile Include="Object\map\SkyDome.cpp" />
     <ClCompile Include="Sound\SoundMaster.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Animation\AnimationData.h" />
     <ClInclude Include="Animation\AnimationManager.h" />
     <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="GreenGround.h" />
     <ClInclude Include="Object\map\GrassLand.h" />
     <ClInclude Include="Object\map\SkyDome.h" />
     <ClInclude Include="Sound\SoundMaster.h" />
