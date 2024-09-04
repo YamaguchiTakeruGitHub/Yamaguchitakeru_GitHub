@@ -9,6 +9,7 @@
 #include "../Object/map/Tree.h"
 #include "../Object/map/GreenGround.h"
 #include "../Object/map/GrassLand.h"
+#include "../Light/Light.h"
 
 
 class SceneGame final
@@ -32,4 +33,5 @@ private:
 	SkyDome* m_SkyDome;
 	Tree* m_Tree;
 	GrassLand* m_GrassLand;
+	Light::Light* m_Light;
 };

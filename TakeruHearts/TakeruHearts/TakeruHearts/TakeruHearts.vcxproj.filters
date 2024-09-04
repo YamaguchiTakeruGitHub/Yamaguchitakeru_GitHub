@@ -114,7 +114,7 @@
     <ClCompile Include="TKRLib\ColliderDataBox.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Light.cpp">
+    <ClCompile Include="Light\Light.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Quaternion.cpp">
@@ -236,7 +236,7 @@
     <ClInclude Include="CommonScene.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Light.h">
+    <ClInclude Include="Light\Light.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="LocalTag.h">

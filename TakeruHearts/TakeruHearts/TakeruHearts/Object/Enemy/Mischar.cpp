@@ -17,7 +17,7 @@ void Mischar::Init(TKRLib::Physics* physics)
 	modelHandle = MV1LoadModel("../Data/Asset/model/Character/Enemy/Mischar.mv1");
 
 	rigidbody.Init();
-	rigidbody.SetPos(VGet(0.0f, 0.0f, 30.0f));
+	rigidbody.SetPos(VGet(0.0f, 0.0f, 60.0f));
 }
 
 void Mischar::Final(TKRLib::Physics* physics)

@@ -145,7 +145,7 @@
   <ItemGroup>
     <ClCompile Include="Animation\AnimationManager.cpp" />
     <ClCompile Include="TKRLib\ColliderDataBox.cpp" />
-    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Light\Light.cpp" />
     <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="UI\Image\Image.cpp" />
     <ClCompile Include="UI\Button\Button.cpp" />
@@ -184,7 +184,7 @@
     <ClInclude Include="Animation\AnimationData.h" />
     <ClInclude Include="TKRLib\ColliderDataBox.h" />
     <ClInclude Include="CommonScene.h" />
-    <ClInclude Include="Light.h" />
+    <ClInclude Include="Light\Light.h" />
     <ClInclude Include="LocalTag.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="UI\Image\Image.h" />
