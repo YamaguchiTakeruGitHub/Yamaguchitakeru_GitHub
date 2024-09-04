@@ -144,9 +144,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation\AnimationManager.cpp" />
+    <ClCompile Include="Math\Matrix.cpp" />
     <ClCompile Include="TKRLib\ColliderDataBox.cpp" />
     <ClCompile Include="Light\Light.cpp" />
-    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Math\Quaternion.cpp" />
     <ClCompile Include="UI\Image\Image.cpp" />
     <ClCompile Include="UI\Button\Button.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
@@ -178,15 +179,17 @@
     <ClCompile Include="Sound\SoundMaster.cpp" />
     <ClCompile Include="Sound\SoundManager.cpp" />
     <ClCompile Include="Status\StatusMaster.cpp" />
+    <ClCompile Include="Math\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation\AnimationManager.h" />
     <ClInclude Include="Animation\AnimationData.h" />
+    <ClInclude Include="Math\Matrix.h" />
     <ClInclude Include="TKRLib\ColliderDataBox.h" />
     <ClInclude Include="CommonScene.h" />
     <ClInclude Include="Light\Light.h" />
     <ClInclude Include="LocalTag.h" />
-    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Math\Quaternion.h" />
     <ClInclude Include="UI\Image\Image.h" />
     <ClInclude Include="UI\Button\Button.h" />
     <ClInclude Include="Camera\Camera.h" />
@@ -221,6 +224,7 @@
     <ClInclude Include="TKRLib\ColliderData.h" />
     <ClInclude Include="TKRLib\GameObjectTag.h" />
     <ClInclude Include="TKRLib\TKRLib.h" />
+    <ClInclude Include="Math\Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

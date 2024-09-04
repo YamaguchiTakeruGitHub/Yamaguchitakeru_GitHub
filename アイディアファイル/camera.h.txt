@@ -1,0 +1,72 @@
+camera.h
+#pragma once
+#include "DxLib.h"
+#include "../Math/Vector3.h"
+
+/// <summary>
+/// ＜カメラクラス＞
+/// カメラの設計図はここで作成する
+/// </summary>
+class Camera
+{
+public:
+	Camera();
+	~Camera();
+
+	math::Vector3 position;
+	math::Vector3 target;
+	math::Vector3 up;
+	math::Vector3 followOffset;
+
+	void SetPosition(const math::Vector3& pos) { position = pos; }
+	void SetTarget(const math::Vector3& tgt) { target = tgt; }
+	void SetUp(const math::Vector3& u) { up = u; }
+	void SetFollowOffset(const math::Vector3& offset) { followOffset = offset; }
+	
+	
+	void Init(VECTOR playerPos);
+	void Update(const VECTOR& characterPosition);
+	void UpdateViewMatrix();
+
+
+	/// <summary>
+	/// 注視する対象のセット
+	/// </summary>
+	/// <param name="target">注視する対象を入れてね☆</param>
+	void SetTarget(const VECTOR& target);
+
+	/// <summary>
+	///		＜ユーザー定義関数＞ジョイステックによる視点回転
+	/// </summary>
+	/// <param name="rightStickX">ジョイステックX軸</param>
+	/// <param name="rightStickY">ジョイステックY軸</param>
+	void Rotate(float rightStickX, float rightStickY);
+
+	/// <summary>
+	/// 	＜ユーザー定義関数＞カメラの位置を移動する
+	/// </summary>
+	/// <param name="newPosition">新しい位置</param>
+	/// <param name="duration">間隔</param>
+	void MoveToPosition(const VECTOR& newPosition, float duration);
+
+
+	float GetCameraHAngle() const { return cameraHAngle; }
+	float GetCameraVAngle() const { return cameraVAngle; }
+
+	const VECTOR& GetPos() const { return pos; }
+
+private:
+
+	VECTOR pos;			//カメラ位置
+	VECTOR targetPos;	//注視する対象の位置
+	VECTOR rotation; //カメラの回転(YawとPitch)
+	
+	float smoothFactor; //補間のスムーズさ
+
+	float cameraHAngle;//水平アングル(Y軸回転)
+	float cameraVAngle;//垂直アングル(X軸回転)
+
+	MATRIX MultiplyMatrix(const MATRIX& mat1, const MATRIX& mat2);
+
+};
+

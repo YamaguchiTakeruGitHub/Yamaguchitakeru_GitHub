@@ -1,0 +1,134 @@
+camera.cppS
+#include "Camera.h"
+#include <math.h>
+
+Camera::Camera()
+	: pos(VGet(0.0f, 0.0f, 0.0f))
+	, targetPos(VGet(0.0f, 0.0f, 0.0f))
+	, rotation(VGet(0.0f, 0.0f, 0.0f))
+	, smoothFactor(0.1f)
+	, cameraHAngle(0.0f)
+	, cameraVAngle(0.0f)
+{
+
+	SetCameraNearFar(0.1f, 1000.0f);
+}
+
+Camera::~Camera()
+{
+}
+
+void Camera::Init(VECTOR playerPos)
+{
+	pos = VGet(playerPos.x + pos.x, playerPos.y + pos.y, playerPos.z + pos.z);
+	targetPos = playerPos;
+}
+
+void Camera::Update(const VECTOR& characterPosition)
+{
+
+	//プレイヤーの位置をVECTORに変換
+	VECTOR playerPos = VGet(characterPosition.x, characterPosition.y, characterPosition.z);
+	//カメラのオフセットをVECTORに変換
+	VECTOR offset = VGet(followOffset.vec.x, followOffset.vec.y, followOffset.vec.z);
+	//プレイヤーの位置とオフセットを加算史枝ターゲット位置を計算
+	targetPos = VAdd(playerPos, offset);
+	//カメラの位置とターゲットを設定
+	SetCameraPositionAndTarget_UpVecY(pos, targetPos);
+}
+
+void Camera::UpdateViewMatrix()
+{
+	SetCameraPositionAndTarget_UpVecY(pos, targetPos);
+}
+
+
+
+void Camera::SetTarget(const VECTOR& target)
+{
+	targetPos = target;
+}
+
+
+
+void Camera::Rotate(float rightStickX, float rightStickY)
+{
+	const float rotationSpeed = 10.01f;//回転速度
+
+	//回転角度を更新
+	cameraHAngle += rightStickX * rotationSpeed;
+	cameraVAngle -= rightStickY * rotationSpeed;
+
+	if (cameraVAngle > DX_PI_F / 2.0f) cameraVAngle = DX_PI_F / 2.0f;
+	if (cameraVAngle < -DX_PI_F / 2.0f) cameraVAngle = -DX_PI_F / 2.0f;
+
+	//回転を計算
+	VECTOR rotationAxisY = VGet(0.0f, 1.0f, 0.0f);//Y軸周りの回転
+	VECTOR rotationAxisX = VGet(1.0f, 0.0f, 0.0f);//X軸周りの回転
+
+	MATRIX rotationMatrixY = MGetRotY(cameraHAngle);
+	MATRIX rotationMatrixX = MGetRotX(cameraVAngle);
+
+	MATRIX combinedRotation = MultiplyMatrix(rotationMatrixY, rotationMatrixX);
+	
+	VECTOR direction = VSub(targetPos, pos);
+	direction = VTransform(direction, combinedRotation);
+
+	targetPos = VAdd(pos, direction);
+
+	SetCameraPositionAndTarget_UpVecY(pos, targetPos);
+	
+
+#if _DEBUG
+	DrawFormatString(200, 300, 0xffffff, "x=%f, y=%f, z=%f", pos.x, pos.y, pos.z);
+	DrawFormatString(200, 320, 0xffffff, "Angle X=%f, Angle Y=%f", cameraVAngle, cameraHAngle);
+
+#endif
+
+}
+
+void Camera::MoveToPosition(const VECTOR& newPosition, float duration)
+{
+	//線形補間で徐々にカメラを移動
+
+	float elapsedTime = 0.0f;//経過時間
+
+	//経過時間が間隔より小さくなった場合
+	while (elapsedTime < duration)
+	{
+		pos = VAdd(VScale(pos, 1.0f - elapsedTime / duration), VScale(newPosition, elapsedTime / duration));
+		SetCameraPositionAndTarget_UpVecY(pos, targetPos);
+		elapsedTime += 1.0f / 60.0f;//1フレームごとに更新
+	}
+}
+
+MATRIX Camera::MultiplyMatrix(const MATRIX& mat1, const MATRIX& mat2)
+{
+	MATRIX result;
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			result.m[i][j] = mat1.m[i][0] * mat2.m[0][j] +
+				mat1.m[i][1] * mat2.m[1][j] +
+				mat1.m[i][2] * mat2.m[2][j] +
+				mat1.m[i][3] * mat2.m[3][j];
+		}
+	}
+	return result;
+}
+
+
+
+
+//Rotate
+//ステック水平入力、カメラを水平方向に回転させる行列
+//ステックの垂直入力。
+
+//カメラ位置に対して水平方向と垂直方向の回転を適用
+
+//回転したあとのカメラ位置を計算し、その位置からプレイヤーにむかいかめらをはいち
+
+//カメラを新し位置に設定し注視点に向かってカメラを向ける
+//参考にしたサイト
+//URL（https://www.bing.com/ck/a?!&&p=b245f06a81a1ea77JmltdHM9MTcyNDcxNjgwMCZpZ3VpZD0zY2VkYWQxZi02MmEwLTY1NjYtMjZmMy1iZWY0NjMxNzY0ZDcmaW5zaWQ9NTIzNw&ptn=3&ver=2&hsh=3&fclid=3cedad1f-62a0-6566-26f3-bef4631764d7&psq=Dxlib+VTransform&u=a1aHR0cHM6Ly9kaXhxLm5ldC9mb3J1bS92aWV3dG9waWMucGhwP3Q9MTg1NDk&ntb=1）

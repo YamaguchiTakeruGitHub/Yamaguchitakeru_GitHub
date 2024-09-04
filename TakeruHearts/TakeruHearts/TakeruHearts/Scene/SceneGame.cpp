@@ -60,14 +60,12 @@ void SceneGame::Update()
 
 	physics->Update();
 
-	//m_SkyDome->Update();
-	m_SkyDome->UpdateForcusPlayer(player->GetPos());
+	m_SkyDome->Update();
+	m_SkyDome->UpdateForcusPlayer(VGet(0,0,0)/*player->GetPos()*/);
 
 	idm->Update();
 	player->Update();
-	//m_camera->Update();
-	m_camera->SetTarget(player->GetPos());
-	m_camera->Rotate(idm->joypad->GetRightStickX(), idm->joypad->GetRightStickY());
+	m_camera->Update(idm->joypad->GetRightStickX(), idm->joypad->GetRightStickY(), player->GetPos());
 	m_FirstMap->Update();
 	m_Mischar->Update();
 	m_Tree->Update();

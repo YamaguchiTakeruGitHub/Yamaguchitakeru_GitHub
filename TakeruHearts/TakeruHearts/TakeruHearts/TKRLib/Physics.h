@@ -38,6 +38,7 @@ namespace TKRLib
 		void FixNextPosition(Collidable* primary, Collidable* secondary)const;
 		void FixPosition();
 
+		//bool CheckOBBCollision3D(const Box& a, const )
 		
 	};
 }

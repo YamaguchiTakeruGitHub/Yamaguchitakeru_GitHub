@@ -194,14 +194,14 @@ bool TKRLib::Physics::IsCollide(const Collidable* objA, const Collidable* objB) 
 		auto objBColliderData = dynamic_cast<ColliderDataSphere*>(objB->colliderData);
 		isHit = (atobLength < objAColliderData->radius + objBColliderData->radius);
 	}
-	/*else
+	else
 	if (aKind == TKRLib::ColliderData::Kind::Box && bKind == TKRLib::ColliderData::Kind::Box)
 	{
 		auto objAColliderData = dynamic_cast<ColliderDataBox*>(objA->colliderData);
 		auto objBColliderData = dynamic_cast<ColliderDataBox*>(objB->colliderData);
 	
-		isHit = CheckOBBCollision3D()
-	}*/
+		//isHit = CheckOBBCollision3D()
+	}
 
 	return isHit;
 }
@@ -229,6 +229,11 @@ void TKRLib::Physics::FixNextPosition(Collidable* primary, Collidable* secondary
 		VECTOR primaryToNewSecondaryPos = VScale(primaryToSecondaryN, awayDist);
 		VECTOR fixedPos = VAdd(primary->nextPos, primaryToNewSecondaryPos);
 		secondary->nextPos = fixedPos;
+	}
+	else
+	if (primaryKind == ColliderData::Kind::Box && secondaryKind == ColliderData::Kind::Box)
+	{
+		
 	}
 	else
 	{

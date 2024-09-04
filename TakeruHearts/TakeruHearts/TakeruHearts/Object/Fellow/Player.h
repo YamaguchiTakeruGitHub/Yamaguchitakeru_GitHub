@@ -1,8 +1,7 @@
 #pragma once
-#include "../TakeruHearts/TKRLib/Physics.h"
-#include "../TakeruHearts/TKRLib/Collidable.h"
-#include "../TakeruHearts/InputDevice/InputDeviceManager.h"
-#include "../../Camera/Camera.h"
+#include "../TKRLib/Physics.h"
+#include "../TKRLib/Collidable.h"
+#include "../InputDevice/InputDeviceManager.h"
 
 class Physics;
 class Collidable;
@@ -22,13 +21,8 @@ public:
 	const VECTOR& GetPos() const { return rigidbody.GetPos(); }
 
 private:
-	bool isMove;
-	float modelHandle;
+
 	float speed;
 
 	InputDevice::InputDeviceManager* idm;
-	Camera* m_camera;
-
-
 };
-

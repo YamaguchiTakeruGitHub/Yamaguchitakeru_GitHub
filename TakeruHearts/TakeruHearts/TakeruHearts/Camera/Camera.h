@@ -1,64 +1,31 @@
 #pragma once
 #include "DxLib.h"
 
-
-/// <summary>
-/// ＜カメラクラス＞
-/// カメラの設計図はここで作成する
-/// </summary>
 class Camera
 {
 public:
 	Camera();
-	~Camera();
-
-	void Init(VECTOR playerPos);
-	void Update(VECTOR playerPos, VECTOR playerDir);
-
-	/// <summary>
-	/// 注視する対象のセット
-	/// </summary>
-	/// <param name="target">注視する対象を入れてね☆</param>
-	void SetTarget(const VECTOR& target);
-
-	/// <summary>
-	///		＜ユーザー定義関数＞ジョイステックによる視点回転
-	/// </summary>
-	/// <param name="rightStickX">ジョイステックX軸</param>
-	/// <param name="rightStickY">ジョイステックY軸</param>
-	void Rotate(float rightStickX, float rightStickY);
-
-	/// <summary>
-	/// 	＜ユーザー定義関数＞カメラの位置を移動する
-	/// </summary>
-	/// <param name="newPosition">新しい位置</param>
-	/// <param name="duration">間隔</param>
-	void MoveToPosition(const VECTOR& newPosition, float duration);
-
-
-	float GetCameraHAngle() const { return cameraHAngle; }
-	float GetCameraVAngle() const { return cameraVAngle; }
-
-	const VECTOR& GetPos() const { return pos; }
-
+	
+	void Init();
+	void Update(float rightSticX, float rightStickY, VECTOR targetPos);
 
 private:
-	float fov;			//視野角
-	float fovRad;		//視野角ラジアン
-	float posRad;		//場所ラジアン
+	VECTOR position;//位置
+	VECTOR direction;//向き
+	VECTOR velocity;//速度
 
-	VECTOR pos;			//カメラ位置
-	VECTOR offset;		//プレイヤーからのオフセット（位置を基準点からの距離で表した値のこと）
-	VECTOR targetPos;	//注視する対象の位置
+	VECTOR rotationAxisX;//X軸周りの回転
+	VECTOR rotationAxisY;//Y軸周りの回転
 
-	//
-	float cameraHAngle;//水平アングル(Y軸回転)
-	float cameraVAngle;//垂直アングル(X軸回転)
+	MATRIX rotationMatrixY;//水平カメラの回転行列
+	MATRIX rotationMatrixX;//垂直カメラの回転行列
+	MATRIX combinedRotation;//回転行列
 
-	constexpr static float defaultFov = 60.0f;
-	constexpr static float fovRange = 30.0f;
-	constexpr static float fovChangeSpeed = 0.01f;
-	constexpr static float posRange = 3.0f;
-	constexpr static float posChangeSpeed = 0.03f;
+	float speed;//カメラ速度
+	float cameraHorizontalAngle;//水平回転(Y軸)
+	float cameraVerticalAngle;//垂直回転(X軸)
+
+
+	MATRIX MultiplyMatrix(const MATRIX& mat1, const MATRIX& mat2);
+
 };
-
