@@ -65,8 +65,7 @@ void Player::Render()
     MV1DrawModel(modelHandle);
 }
 
-
-
+Hpバーコード下
 
 #pragma once
 #include "DxLib.h"
@@ -152,3 +151,6 @@ void Player::DrawHPBar()
     // HPバーの前面（現在のHPを示すバー）
     DrawBox(hpBarPosX, hpBarPosY, hpBarPosX + currentBarWidth, hpBarPosY + hpBarHeight, GetColor(0, 255, 0), TRUE);
 }
+
+
+
