@@ -154,3 +154,91 @@ void Player::DrawHPBar()
 
 
 
+
+ロックオンの仕組み下
+
+#include "DxLib.h"
+#include <vector>
+
+class Target
+{
+public:
+    VECTOR position; // ターゲットの座標
+    Target(VECTOR pos) : position(pos) {}
+};
+
+// プレイヤー周囲のターゲットを検出
+Target* FindNearestTarget(VECTOR playerPosition, const std::vector<Target>& targets, float lockOnRange)
+{
+    Target* nearestTarget = nullptr;
+    float nearestDistance = lockOnRange; // ロックオン可能な距離
+
+    for (const auto& target : targets)
+    {
+        // プレイヤーとターゲットの距離を計算
+        float distance = VSize(VSub(target.position, playerPosition));
+
+        // ロックオン範囲内で最も近いターゲットを探す
+        if (distance < nearestDistance)
+        {
+            nearestTarget = const_cast<Target*>(&target); // 最近接ターゲットを更新
+            nearestDistance = distance;
+        }
+    }
+
+    return nearestTarget; // 見つからなければ nullptr を返す
+}
+
+
+
+
+void LockOnToTarget(VECTOR& playerDirection, VECTOR playerPosition, VECTOR targetPosition)
+{
+    // ターゲットの方向を計算
+    VECTOR directionToTarget = VSub(targetPosition, playerPosition);
+
+    // 視線をターゲット方向に合わせる
+    playerDirection = VNorm(directionToTarget); // 正規化して方向ベクトルにする
+}
+
+
+
+void UpdateCameraToLockOnTarget(VECTOR playerPosition, VECTOR targetPosition)
+{
+    // カメラのターゲット位置を設定
+    SetCameraPositionAndTarget_UpVecY(VGet(playerPosition.x, playerPosition.y + 5.0f, playerPosition.z), targetPosition);
+}
+
+
+
+bool isLockedOn = false; // ロックオン状態を管理するフラグ
+
+void HandleLockOnInput(Target*& lockedOnTarget, VECTOR playerPosition, const std::vector<Target>& targets)
+{
+    // ロックオンキーが押された場合
+    if (CheckHitKey(KEY_INPUT_L))
+    {
+        if (isLockedOn)
+        {
+            // ロックオン解除
+            lockedOnTarget = nullptr;
+            isLockedOn = false;
+        }
+        else
+        {
+            // 最も近いターゲットを探してロックオン
+            lockedOnTarget = FindNearestTarget(playerPosition, targets, 100.0f); // 例: 100.0fがロックオン距離
+            if (lockedOnTarget)
+            {
+                isLockedOn = true;
+            }
+        }
+    }
+
+    // ターゲットがロックオンされている場合はカメラをターゲットに向ける
+    if (isLockedOn && lockedOnTarget)
+    {
+        UpdateCameraToLockOnTarget(playerPosition, lockedOnTarget->position);
+    }
+}
+
