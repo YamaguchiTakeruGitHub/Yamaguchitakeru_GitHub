@@ -1,5 +1,5 @@
 #pragma once
-#include "TKRLib/ColliderData.h"
+#include "ColliderData.h"
 #include "DxLib.h"
 
 namespace TKRLib

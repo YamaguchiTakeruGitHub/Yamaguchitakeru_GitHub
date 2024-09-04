@@ -1,5 +1,5 @@
 #include "SceneTitle.h"
-
+#include "SceneManager.h"
 
 SceneTitle::SceneTitle()
 	: imgBG(LoadGraph("../Data/Asset/img/TitleButtonRogo.png"))
@@ -13,8 +13,10 @@ SceneTitle::SceneTitle()
 	, pushNow()
 	, isDUPButtonPressed()
 	, isDDOWNButtonPressed()
+	, isChangeSceneGame()
 {
 	DrawFormatString(0, 0, 0xffffff, "titleデストラクタ");
+	
 }
 
 SceneTitle::~SceneTitle()
@@ -22,6 +24,7 @@ SceneTitle::~SceneTitle()
 	DrawFormatString(0, 20, 0xffffff, "titleコンストラクタ");
 	DeleteGraph(imgBG);
 	DeleteGraph(buttonPoint);
+
 }
 
 void SceneTitle::Init()
@@ -41,6 +44,7 @@ void SceneTitle::Init()
 	pushNow = 0;
 	isDUPButtonPressed = false;
 	isDDOWNButtonPressed = false;
+	isChangeSceneGame = false;
 }
 
 void SceneTitle::Update()
@@ -75,7 +79,8 @@ void SceneTitle::Update()
 		isDDOWNButtonPressed = false;
 	}
 
-
+	//シーン移行用のボタンが押されるまでは常にフラグをおろす
+	isChangeSceneGame = false;
 
 	//選択した項目をAボタンで実行
 	if (idm->joypad->isA == true)
@@ -83,7 +88,7 @@ void SceneTitle::Update()
 		switch (nowSelect)
 		{
 		case eMenu_NewGame:
-
+			isChangeSceneGame = true;
 			break;
 
 		case eMenu_LoadGame:
@@ -94,6 +99,11 @@ void SceneTitle::Update()
 			break;
 		}
 	}
+	 
+	
+
+	
+
 
 	//選択された項目の座標を格納
 	switch (nowSelect)

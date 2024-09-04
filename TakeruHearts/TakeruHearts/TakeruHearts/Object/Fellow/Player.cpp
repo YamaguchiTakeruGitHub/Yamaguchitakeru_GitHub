@@ -50,7 +50,7 @@ void Player::Final(TKRLib::Physics* physics)
 void Player::Update()
 {
 	// 標準ライトの方向をＸ軸のプラス方向にする
-	SetLightDirection(VGet(0.0f, 5.0f, 0.0f));
+	SetLightDirection(VGet(5.0f, -5.0f, -5.0f));
 
 	idm->Update();
 

@@ -12,8 +12,8 @@ public:
 	void Final();
 
 private:
-	int modelhandle;
-	VECTOR Position;
+	int modelHandle;
+	VECTOR position;
 
 };
 

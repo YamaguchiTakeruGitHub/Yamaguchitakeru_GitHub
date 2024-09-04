@@ -1,6 +1,6 @@
 
 #include<DxLib.h>
-#include <../nlohmann/json.hpp>
+//#include <../nlohmann/json.hpp>
 
 #include <fstream>
 #include <iostream>
@@ -13,37 +13,37 @@
 
 //ポインタはアドレスを格納するための変数！
 
-struct GameConfig
-{
-	std::uint16_t screenWidth;
-	std::uint16_t screenHeight;
-	int masterSound;
-};
-
-
-bool LoadConfig(const std::string& filename, GameConfig& config)
-{
-	std::ifstream padfile(filename, std::ios::binary);
-
-	if (!padfile.is_open())
-	{
-		MessageBox(NULL, "padfileが開けませんでした。", "エラー", MB_OK);
-
-
-		return false;
-	}
-
-	nlohmann::json jsonData;
-
-	padfile >> jsonData;
-
-	config.screenHeight = jsonData["screenHeight"];
-	config.screenWidth = jsonData["screenWidth"];
-
-	padfile.close();
-
-	return true;
-}
+//struct GameConfig
+//{
+//	std::uint16_t screenWidth;
+//	std::uint16_t screenHeight;
+//	int masterSound;
+//};
+//
+//
+//bool LoadConfig(const std::string& filename, GameConfig& config)
+//{
+//	std::ifstream padfile(filename, std::ios::binary);
+//
+//	if (!padfile.is_open())
+//	{
+//		MessageBox(NULL, "padfileが開けませんでした。", "エラー", MB_OK);
+//
+//
+//		return false;
+//	}
+//
+//	nlohmann::json jsonData;
+//
+//	padfile >> jsonData;
+//
+//	config.screenHeight = jsonData["screenHeight"];
+//	config.screenWidth = jsonData["screenWidth"];
+//
+//	padfile.close();
+//
+//	return true;
+//}
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -54,7 +54,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	if (DxLib_Init() == -1)
 	{
-		MessageBox(NULL, "DxLibの初期化に失敗しました。", "エラー", MB_OK);
 		return -1;
 	}
 
@@ -65,7 +64,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	//初期化（開始）
 	//構造体のインスタンス作成
-	GameConfig config;
+	//GameConfig config;
 
 	//LoadConfigで指定のパスが開けなかった場合は１を返す
 	/*if (!LoadConfig("../Data/AllVariables/GameConfig.json", config))
@@ -93,7 +92,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	SetUseZBuffer3D(true);
 
-	while (ProcessMessage() != 1)
+	//MEMO：今回ウィンドウの×を押したがファイルが実行されつづけたバグが発生下が
+	//ProcessMessage() != 1としていた事が原因だった、この設定をすると
+	//exeファイルが完全に閉じず、プロセスに残り続けるという致命的な欠陥ができる
+	//これの対処法はProcessMessage() !- -1にすることだ
+	while (ProcessMessage() != -1)
 	{
 		LONGLONG start = GetNowHiPerformanceCount();
 

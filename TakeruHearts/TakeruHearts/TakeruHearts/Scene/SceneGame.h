@@ -8,6 +8,7 @@
 #include "../Object/map/SkyDome.h"
 #include "../Object/map/Tree.h"
 #include "../Object/map/GreenGround.h"
+#include "../Object/map/GrassLand.h"
 
 
 class SceneGame final
@@ -30,5 +31,5 @@ private:
 	Mischar* m_Mischar;
 	SkyDome* m_SkyDome;
 	Tree* m_Tree;
-
+	GrassLand* m_GrassLand;
 };

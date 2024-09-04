@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "SceneBase.h"
 
+
 class SceneTitle final
 	: public SceneBase
 {
@@ -14,15 +15,19 @@ public:
 	void Draw() override;
 	void End() override;
 
+	bool IsGetChangeGameSecene() const { return isChangeSceneGame; }
+
 private:
 
-
+	
 	int imgBG;
 
 	int nowSelect;
 	bool isDUPButtonPressed;
 	bool isDDOWNButtonPressed;
 
+	//bool isChangeSceneBack;
+	bool isChangeSceneGame;//ゲームシーンに移行するためのフラグ
 
 	int buttonPoint;
 

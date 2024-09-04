@@ -1,8 +1,75 @@
-﻿  main.cpp
-C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\main.cpp(68,13): warning C4101: 'config': ローカル変数は 1 度も使われていません。
+﻿  AnimationManager.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  ColliderDataBox.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Light.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Quaternion.cpp
+  Image.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Button.cpp
+  Camera.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Rigidbody.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Physics.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  DebugDraw.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  ColliderDataSphere.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Collidable.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Config.cpp
+  FadeInAndFadeOut.cpp
+  GreenGround.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  GrassLand.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  FirstMap.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  InputDeviceManager.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  KeyBoard.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  JoyPad.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  コンパイル中...
+  main.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  MapManager.cpp
+  MapBase.cpp
+  Mischar.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Player.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(23,28): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(38,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(93,21): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(110,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Object\Fellow\Player.cpp(122,15): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SkyDome.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Tree.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  SceneTitle.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Scene\SceneTitle.cpp(133,44): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\Scene\SceneTitle.cpp(133,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneResult.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  SceneManager.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  SceneGame.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  SceneBase.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  SoundMaster.cpp
+  SoundManager.cpp
+C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  StatusMaster.cpp
   コード生成しています。
-  14 of 717 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    18 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+  All 460 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   コード生成が終了しました。
-  TakeruHearts.vcxproj -> C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Release\TakeruHearts.exe
+  TakeruHearts.vcxproj -> C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Release\TakeruHearts.exe

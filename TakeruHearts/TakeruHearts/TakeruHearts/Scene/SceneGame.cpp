@@ -12,6 +12,7 @@ SceneGame::SceneGame()
 	m_Mischar = new Mischar;
 	m_SkyDome = new SkyDome;
 	m_Tree = new Tree;
+	m_GrassLand = new GrassLand;
 
 }
 
@@ -32,7 +33,8 @@ SceneGame::~SceneGame()
 	delete(m_SkyDome);
 	m_Tree = nullptr;
 	delete(m_Tree);
-
+	m_GrassLand = nullptr;
+	delete(m_GrassLand);
 }
 
 void SceneGame::Init()
@@ -45,6 +47,7 @@ void SceneGame::Init()
 	m_FirstMap->Init(physics);
 	m_Mischar->Init(physics);
 	m_Tree->Init();
+	m_GrassLand->Init();
 }
 
 void SceneGame::Update()
@@ -65,6 +68,7 @@ void SceneGame::Update()
 	m_FirstMap->Update();
 	m_Mischar->Update();
 	m_Tree->Update();
+	m_GrassLand->Update();
 }
 
 void SceneGame::Draw()
@@ -78,6 +82,7 @@ void SceneGame::Draw()
 	m_Mischar->Draw();
 	m_SkyDome->Draw();
 	m_Tree->Draw();
+	m_GrassLand->Draw();
 }
 
 void SceneGame::End()
@@ -89,4 +94,5 @@ void SceneGame::End()
 	m_FirstMap->Final(physics);
 	m_Mischar->Final(physics);
 	m_Tree->Final();
+	m_GrassLand->Final();
 }
