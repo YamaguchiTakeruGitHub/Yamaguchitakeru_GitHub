@@ -1,3 +1,24 @@
+#pragma once
+#include "AnimationManager.h"
+#include "DxLib.h"
+
+class Player
+{
+public:
+    Player();
+    void Init();
+    void Update(float deltaTime);
+    void Render();
+
+private:
+    VECTOR position;
+    int modelHandle;
+
+    AnimationManager animationManager;
+    std::string currentAnimation;
+};
+
+
 #include "Player.h"
 
 Player::Player()
