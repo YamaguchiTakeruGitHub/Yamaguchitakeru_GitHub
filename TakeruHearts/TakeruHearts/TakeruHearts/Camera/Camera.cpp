@@ -31,23 +31,23 @@ void Camera::Init()
 	combinedRotation;
 }
 
-void Camera::Update(float rightStickX, float rightStickY, VECTOR targetPos)
+void Camera::Update(float rightStickX, float rightStickY, VECTOR targetPos, VECTOR moveInput)
 {
-	//��]�p�x���X�V
+	//回転角度を更新
 	cameraHorizontalAngle += rightStickX * speed;
 	cameraVerticalAngle	  -= rightStickY * speed;
 
-	//�����J�������X�O�x�𒴂����ꍇ
+	//もしカメラが９０度を超えた場合
 	if (cameraVerticalAngle > DX_PI_F / 2.0f)
 	{
-		//�����p�x���X�O�x�ɂ�������
+		//垂直角度を９０度にし続ける
 		cameraVerticalAngle = DX_PI_F / 2.0f;
 	}
 
-	//�����J������-�X�O�x�𒴂����ꍇ
+	//もしカメラが-９０度を超えた場合
 	if (cameraVerticalAngle < -DX_PI_F / 2.0f)
 	{
-		//�����p�x��-�X�O�x�ɂ�������
+		//垂直角度を-９０度にし続ける
 		cameraVerticalAngle = -DX_PI_F / 2.0;
 	}
 
@@ -56,8 +56,13 @@ void Camera::Update(float rightStickX, float rightStickY, VECTOR targetPos)
 
 	combinedRotation = MultiplyMatrix(rotationMatrixY, rotationMatrixX);
 	
-	direction = VSub(targetPos, position);
+//入力に基づいて移動方向を計算
+velocity = VTransform(moveInput combinedRotation);
+//カメラの位置を更新
+position = VAdd(position, velocity);
 
+
+	direction = VSub(targetPos, position);
 	direction = VTransform(direction, combinedRotation);
 	targetPos = VAdd(position, direction);
 	SetCameraPositionAndTarget_UpVecY(position, targetPos);
