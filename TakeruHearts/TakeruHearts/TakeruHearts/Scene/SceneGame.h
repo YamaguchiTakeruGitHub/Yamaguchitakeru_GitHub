@@ -10,6 +10,7 @@
 #include "../Object/map/GreenGround.h"
 #include "../Object/map/GrassLand.h"
 #include "../Light/Light.h"
+#include "../UI/Command/UICommand.h"
 
 
 class SceneGame final
@@ -34,4 +35,7 @@ private:
 	Tree* m_Tree;
 	GrassLand* m_GrassLand;
 	Light::Light* m_Light;
+	UI::UICommand* m_UiCommand;
+
+	float deltaTime;
 };

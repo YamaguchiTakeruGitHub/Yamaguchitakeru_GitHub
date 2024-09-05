@@ -102,9 +102,6 @@ void SceneTitle::Update()
 	 
 	
 
-	
-
-
 	//‘I‘ğ‚³‚ê‚½€–Ú‚ÌÀ•W‚ğŠi”[
 	switch (nowSelect)
 	{

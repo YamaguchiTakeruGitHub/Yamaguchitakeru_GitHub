@@ -50,13 +50,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	SetWindowText("TakeruHearts");
 
+	
+	
+	SetGraphMode(1280, 720, 16);
 	ChangeWindowMode(true);
-
-	if (DxLib_Init() == -1)
-	{
-		return -1;
-	}
-
+	if (DxLib_Init() == -1){return -1;}
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	// 背景の色を灰色にする
@@ -78,7 +76,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	/*SetGraphMode(config.screenWidth, config.screenHeight, 16);
 	SetWindowSize(config.screenWidth, config.screenHeight);*/
 
-	SetGraphMode(1280, 720, 16);
 	SetWindowSize(1280, 720);
 
 	//MEMO：exeファイルが開けないのは外部ファイルの参照がうまくいってないから

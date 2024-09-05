@@ -2,6 +2,7 @@
 
 
 SceneGame::SceneGame()
+	: deltaTime()
 {
 	DrawFormatString(0, 0, 0xffffff, "Gameデストラクタ");
 
@@ -14,6 +15,7 @@ SceneGame::SceneGame()
 	m_Tree = new Tree;
 	m_GrassLand = new GrassLand;
 	m_Light = new Light::Light;
+	m_UiCommand = new UI::UICommand;
 }
 
 SceneGame::~SceneGame()
@@ -37,46 +39,52 @@ SceneGame::~SceneGame()
 	delete(m_GrassLand);
 	m_Light = nullptr;
 	delete(m_Light);
+	m_UiCommand = nullptr;
+	delete(m_UiCommand);
 }
 
 void SceneGame::Init()
 {
 	DrawFormatString(0, 40, 0xffffff, "Game初期化");
 
+	deltaTime = 2.0f;
+
 	idm->Init();
 	player->Init(physics);
+	m_camera->Init();
 	m_SkyDome->Init();
 	m_FirstMap->Init(physics);
 	m_Mischar->Init(physics);
 	m_Tree->Init();
 	m_GrassLand->Init();
 	m_Light->Init();
+	m_UiCommand->Init();
 }
 
 void SceneGame::Update()
 {
-	TKRLib::DebugDraw::Clear();
 	DrawFormatString(0, 60, 0xffffff, "Game更新");
 
 	physics->Update();
 
 	m_SkyDome->Update();
-	m_SkyDome->UpdateForcusPlayer(VGet(0,0,0)/*player->GetPos()*/);
+	m_SkyDome->UpdateForcusPlayer(player->GetPos());
 
 	idm->Update();
-	player->Update();
+	player->Update(deltaTime);
 	m_camera->Update(idm->joypad->GetRightStickX(), idm->joypad->GetRightStickY(), player->GetPos());
 	m_FirstMap->Update();
 	m_Mischar->Update();
 	m_Tree->Update();
 	m_GrassLand->Update();
 	m_Light->Update();
+	m_UiCommand->Update();
+	TKRLib::DebugDraw::Clear();
 }
 
 void SceneGame::Draw()
 {
 	DrawFormatString(0, 80, 0xffffff, "Game描画");
-	TKRLib::DebugDraw::Draw();
 	idm->Draw();
 
 	player->Draw();
@@ -86,6 +94,8 @@ void SceneGame::Draw()
 	m_Tree->Draw();
 	m_GrassLand->Draw();
 	m_Light->Draw();
+	m_UiCommand->Draw();
+	TKRLib::DebugDraw::Draw();
 }
 
 void SceneGame::End()
@@ -99,4 +109,5 @@ void SceneGame::End()
 	m_Tree->Final();
 	m_GrassLand->Final();
 	m_Light->Final();
+	m_UiCommand->Final();
 }

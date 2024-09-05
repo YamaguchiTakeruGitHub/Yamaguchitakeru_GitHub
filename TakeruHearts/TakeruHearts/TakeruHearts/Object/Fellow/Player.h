@@ -2,7 +2,10 @@
 #include "../TKRLib/Physics.h"
 #include "../TKRLib/Collidable.h"
 #include "../InputDevice/InputDeviceManager.h"
+#include "../Animation/AnimationManager.h"
 
+
+class AnimationManager;
 class Physics;
 class Collidable;
 class Player : public TKRLib::Collidable
@@ -12,7 +15,7 @@ public:
 
 	void Init(TKRLib::Physics* physics);
 	void Final(TKRLib::Physics* physics);
-	void Update();
+	void Update(float deltaTime);
 	void Draw();
 
 	//è’ìÀÇµÇΩÇ∆Ç´
@@ -22,7 +25,16 @@ public:
 
 private:
 
+	float playerHorizontalAngle;
+	float playerVerticalAngle;
+
 	float speed;
+	float modelRot;
+
+	bool isMove;
 
 	InputDevice::InputDeviceManager* idm;
+
+	AnimationManager animationManager;
+	std::string currentAnimation;
 };

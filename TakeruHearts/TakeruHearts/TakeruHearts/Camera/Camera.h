@@ -7,12 +7,16 @@ public:
 	Camera();
 	
 	void Init();
-	void Update(float rightSticX, float rightStickY, VECTOR targetPos);
+	void Update(float rightStickX, float rightStickY, VECTOR targetPos);
+
+
 
 private:
 	VECTOR position;//位置
 	VECTOR direction;//向き
 	VECTOR velocity;//速度
+	VECTOR targetPos;//注視する位置
+	VECTOR offset;//カメラの固定場所
 
 	VECTOR rotationAxisX;//X軸周りの回転
 	VECTOR rotationAxisY;//Y軸周りの回転
