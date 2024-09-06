@@ -3,25 +3,30 @@
 #include "../TakeruHearts/TKRLib/Physics.h"
 #include "../TakeruHearts/TKRLib/Collidable.h"
 
-namespace Ground
+
+class Physics;
+class Collidable;
+class GreenGround : public TKRLib::Collidable
 {
-	class Physics;
-	class Collidable;
-	class GreenGround : public TKRLib::Collidable
-	{
-	public:
-		GreenGround();
+public:
+	GreenGround();
 
-		void Init(TKRLib::Physics* physics);
-		void Final(TKRLib::Physics* physics);
-		void Update();
-		void Draw();
+	void Init(TKRLib::Physics* physics);
+	void Final(TKRLib::Physics* physics);
+	void Update();
+	void Draw();
 
-		void OnCollide(const Collidable& collider) override;
-		const VECTOR& GetPos() const { return rigidbody.GetPos(); }
+	//è’ìÀÇµÇΩÇ∆Ç´
+	void OnCollide(const Collidable& colider) override;
 
-	private:
+	TKRLib::ColliderData* GetColliderData() const;
+	VECTOR position;
 
-	};
-}
+private:
+	
+	MATRIX CreateIdentityMatrix();
+	int modelHandle;
+	
+};
+
 

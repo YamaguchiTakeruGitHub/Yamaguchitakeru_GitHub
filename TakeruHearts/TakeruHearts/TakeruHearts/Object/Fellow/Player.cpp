@@ -29,7 +29,7 @@ void Player::Init(TKRLib::Physics* physics)
 	modelHandle = MV1LoadModel("../Data/Asset/model/Character/Player/Knight.mv1");
 
 	rigidbody.Init();
-	rigidbody.SetPos(VGet(0.0f, 0.0f, -100.0f));
+	rigidbody.SetPos(VGet(0.0f, 0.0f, 150.0f));
 	
 	speed = 0.2f;
 	modelRot = 0.0f;
@@ -118,8 +118,25 @@ void Player::Update(float deltaTime)
 		dir = VNorm(dir);
 	}
 
+
+
+	//VECTOR aimVelocity = VScale(dir, speed);
+	//VECTOR privVelocity = rigidbody.GetVelocity();
+	//VECTOR newVelociy = VGet(aimVelocity.x, privVelocity.y, 0);
+
+	//if (idm->joypad->isB == true)
+	//{
+	//	newVelociy.y = JumpPower;
+	//}
+
+	//newVelociy.y -= 0.1f;
+
 	//方向と量(speed)をスケーリングし速度に変換
 	rigidbody.SetVelocity(VScale(dir, speed));
+	
+	//方向と量(speed)をスケーリングし速度に変換
+	//rigidbody.SetVelocity(newVelociy);
+
 	/*
 	VECTOR vectole = */
 

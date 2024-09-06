@@ -1,21 +1,2 @@
-﻿  UICommand.cpp
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(79,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(79,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(80,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(80,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(81,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(81,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(82,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(82,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(83,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(83,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(84,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(84,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(85,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(85,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(86,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(86,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(87,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\TakeruHearts\UI\Command\UICommand.cpp(87,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  TakeruHearts.vcxproj -> C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Debug\TakeruHearts.exe
+﻿  Player.cpp
+  TakeruHearts.vcxproj -> C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Debug\TakeruHearts.exe

@@ -111,9 +111,6 @@
     <ClCompile Include="UI\Image\Image.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TKRLib\ColliderDataBox.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Light\Light.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -130,6 +127,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SpeechBubble.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TKRLib\ColliderDataOBB.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -242,9 +242,6 @@
     <ClInclude Include="UI\Image\Image.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TKRLib\ColliderDataBox.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CommonScene.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -267,6 +264,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SpeechBubble.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TKRLib\ColliderDataOBB.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

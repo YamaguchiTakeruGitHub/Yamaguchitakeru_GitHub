@@ -12,6 +12,7 @@ namespace TKRLib
 		const VECTOR& GetPos() const { return position; }
 		const VECTOR& GetDir() const { return direction; }
 		const VECTOR& GetVelocity() const { return velocity; }
+		bool UseGravity() const { return useGravity; }
 
 		void SetPos(const VECTOR& set) { position = set; }
 		void SetVelocity(const VECTOR& set);
@@ -20,6 +21,7 @@ namespace TKRLib
 		VECTOR position;
 		VECTOR direction;
 		VECTOR velocity;
+		bool useGravity;
 	};
 }
 

@@ -1,6 +1,8 @@
 #include "DxLib.h"
-#include <cassert>
 #include "../TKRLib/Physics.h"
+#include <cassert>
+#include <cmath>
+#include <array>
 
 
 //少し余分に離す
@@ -51,7 +53,24 @@ void TKRLib::Physics::Update()
 	for (auto& item : collidables)
 	{
 		auto pos = item->rigidbody.GetPos();
+		//auto velocity = item->rigidbody.GetVelocity();
+
+		//// 重力を利用する設定なら、重力を追加する
+
+		//if (item->rigidbody.UseGravity())
+		//{
+		//	velocity = VAdd(velocity, VGet(0, Gravity, 0));
+
+		//	// 最大重力加速度より大きかったらクランプ
+		//	if (velocity.y < MaxGravityAccel)
+		//	{
+		//		velocity = VGet(velocity.x, MaxGravityAccel, velocity.z);
+		//	}
+		//}
+		
 		auto nextPos = VAdd(pos, item->rigidbody.GetVelocity());
+		//item->rigidbody.SetVelocity(velocity);
+
 #if _DEBUG
 		if (item->colliderData->GetKind() == TKRLib::ColliderData::Kind::Sphere)
 		{
@@ -61,6 +80,16 @@ void TKRLib::Physics::Update()
 			DebugDraw::DrawSphere(pos, radius, BeforeFixInfoColor);
 			DebugDraw::DrawLine(pos, nextPos, AimInfoColor);
 			DebugDraw::DrawSphere(nextPos, radius, AimInfoColor);
+		}
+		if (item->colliderData->GetKind() == TKRLib::ColliderData::Kind::Box)
+		{
+			ColliderDataOBB* obbData;
+			obbData = dynamic_cast<ColliderDataOBB*>(item->colliderData);
+			VECTOR center = obbData->center;
+			std::array<float, 3> halfSize = obbData->halfSize;
+			MATRIX rotation = obbData->rotation;
+			DebugDraw::DrawOBB(center, halfSize, rotation, BeforeFixInfoColor);
+
 		}
 
 #endif
@@ -194,14 +223,28 @@ bool TKRLib::Physics::IsCollide(const Collidable* objA, const Collidable* objB) 
 		auto objBColliderData = dynamic_cast<ColliderDataSphere*>(objB->colliderData);
 		isHit = (atobLength < objAColliderData->radius + objBColliderData->radius);
 	}
-	else
-	if (aKind == TKRLib::ColliderData::Kind::Box && bKind == TKRLib::ColliderData::Kind::Box)
+	else if (aKind == ColliderData::Kind::Box && bKind == ColliderData::Kind::Box)
 	{
-		auto objAColliderData = dynamic_cast<ColliderDataBox*>(objA->colliderData);
-		auto objBColliderData = dynamic_cast<ColliderDataBox*>(objB->colliderData);
-	
-		//isHit = CheckOBBCollision3D()
+		// OBB同士の当たり判定 (Separating Axis Theorem, SAT を使う)
+		auto obbA = dynamic_cast<ColliderDataOBB*>(objA->colliderData);
+		auto obbB = dynamic_cast<ColliderDataOBB*>(objB->colliderData);
+		isHit = CheckOBBOverlap(obbA, obbB);
 	}
+	else if (aKind == ColliderData::Kind::Box && bKind == ColliderData::Kind::Sphere)
+	{
+		// OBB vs Sphere 判定
+		auto obb = dynamic_cast<ColliderDataOBB*>(objA->colliderData);
+		auto sphere = dynamic_cast<ColliderDataSphere*>(objB->colliderData);
+		isHit = CheckOBBSphereCollision(obb, objA->nextPos, sphere, objB->nextPos);
+	}
+	else if (aKind == ColliderData::Kind::Sphere && bKind == ColliderData::Kind::Box)
+	{
+		// Sphere vs OBB 判定（順序を逆にして処理）
+		auto sphere = dynamic_cast<ColliderDataSphere*>(objA->colliderData);
+		auto obb = dynamic_cast<ColliderDataOBB*>(objB->colliderData);
+		isHit = CheckOBBSphereCollision(obb, objB->nextPos, sphere, objA->nextPos);
+	}
+
 
 	return isHit;
 }
@@ -230,10 +273,106 @@ void TKRLib::Physics::FixNextPosition(Collidable* primary, Collidable* secondary
 		VECTOR fixedPos = VAdd(primary->nextPos, primaryToNewSecondaryPos);
 		secondary->nextPos = fixedPos;
 	}
-	else
-	if (primaryKind == ColliderData::Kind::Box && secondaryKind == ColliderData::Kind::Box)
+	else if (primaryKind == ColliderData::Kind::Box && secondaryKind == ColliderData::Kind::Sphere)
 	{
-		
+		// OBB vs Sphere の位置補正
+		auto obb = dynamic_cast<ColliderDataOBB*>(primary->colliderData);
+		auto sphere = dynamic_cast<ColliderDataSphere*>(secondary->colliderData);
+
+		VECTOR obbPos = primary->nextPos;
+		VECTOR spherePos = secondary->nextPos;
+
+		// OBBの最近接点を見つける
+		VECTOR closestPoint = spherePos;
+		for (int i = 0; i < 3; ++i)
+		{
+			VECTOR axis = VGet(obb->rotation.m[i][0], obb->rotation.m[i][1], obb->rotation.m[i][2]);
+			VECTOR obbToSphere = VSub(spherePos, obbPos);
+			float distance = VDot(obbToSphere, axis);
+			if (distance > obb->halfSize[i]) distance = obb->halfSize[i];
+			if (distance < -obb->halfSize[i]) distance = -obb->halfSize[i];
+			closestPoint = VAdd(closestPoint, VScale(axis, distance));
+		}
+
+		// 球をOBBの外側に押し出す
+		VECTOR closestToSphere = VSub(closestPoint, spherePos);
+		VECTOR normalized = VNorm(closestToSphere);
+		float overlap = sphere->radius - VSize(closestToSphere);
+		if (overlap > 0.0f)
+		{
+			secondary->nextPos = VAdd(spherePos, VScale(normalized, overlap + A_LITTLE_EXTRA_RELEASE));
+		}
+	}
+	else if (primaryKind == ColliderData::Kind::Box && secondaryKind == ColliderData::Kind::Box)
+	{
+		// OBB vs OBB の位置補正
+		auto obb1 = dynamic_cast<ColliderDataOBB*>(primary->colliderData);
+		auto obb2 = dynamic_cast<ColliderDataOBB*>(secondary->colliderData);
+
+		// OBBの中心位置
+		VECTOR obb1Pos = primary->nextPos;
+		VECTOR obb2Pos = secondary->nextPos;
+
+		// OBBのローカル空間における位置
+		VECTOR obb1ToObb2 = VSub(obb2Pos, obb1Pos);
+
+		// OBBのローカル軸の計算
+		VECTOR axes[15];
+		for (int i = 0; i < 3; ++i)
+		{
+			axes[i] = VGet(obb1->rotation.m[i][0], obb1->rotation.m[i][1], obb1->rotation.m[i][2]);
+			axes[3 + i] = VGet(obb2->rotation.m[i][0], obb2->rotation.m[i][1], obb2->rotation.m[i][2]);
+		}
+		for (int i = 0; i < 3; ++i)
+		{
+			for (int j = 0; j < 3; ++j)
+			{
+				axes[6 + i * 3 + j] = VCross(axes[i], axes[3 + j]);
+			}
+		}
+
+		float minOverlap = FLT_MAX;
+		VECTOR bestAxis;
+		for (int i = 0; i < 15; ++i)
+		{
+			VECTOR axis = axes[i];
+			VECTOR absAxis = VGet(std::abs(axis.x), std::abs(axis.y), std::abs(axis.z));
+
+			float obb1Projection = obb1->halfSize[0] * absAxis.x + obb1->halfSize[1] * absAxis.y + obb1->halfSize[2] * absAxis.z;
+			float obb2Projection = obb2->halfSize[0] * absAxis.x + obb2->halfSize[1] * absAxis.y + obb2->halfSize[2] * absAxis.z;
+			float projection = VDot(obb1ToObb2, axis);
+
+			float minProj1 = projection - obb1Projection;
+			float maxProj1 = projection + obb1Projection;
+			float minProj2 = -obb2Projection;
+			float maxProj2 = obb2Projection;
+
+			if (minProj1 > maxProj2 || minProj2 > maxProj1)
+			{
+				// 軸方向に重なりがない場合、衝突なし
+				return;
+			}
+
+			float overlap = minProj1 - maxProj2;
+			if (minProj2 > maxProj1)
+			{
+				overlap = minProj2 - maxProj1;
+			}
+
+			if (overlap < minOverlap)
+			{
+				minOverlap = overlap;
+				bestAxis = axis;
+			}
+		}
+
+		// OBBの中心を重なりの最小分離ベクトルに基づいて補正
+		if (minOverlap < 0.0f)
+		{
+			VECTOR correction = VScale(bestAxis, minOverlap + A_LITTLE_EXTRA_RELEASE);
+			primary->nextPos = VAdd(obb1Pos, VScale(correction, -0.5f));
+			secondary->nextPos = VAdd(obb2Pos, VScale(correction, 0.5f));
+		}
 	}
 	else
 	{
@@ -263,4 +402,100 @@ void TKRLib::Physics::FixPosition()
 		//位置の確定
 		item->rigidbody.SetPos(item->nextPos);
 	}
+}
+
+bool TKRLib::Physics::CheckOBBOverlap(const ColliderDataOBB* obbA, const ColliderDataOBB* obbB) const
+{
+	// OBBの軸
+	VECTOR axes[6] = {
+		VGet(obbA->rotation.m[0][0], obbA->rotation.m[0][1], obbA->rotation.m[0][2]), // OBB A の x 軸
+		VGet(obbA->rotation.m[1][0], obbA->rotation.m[1][1], obbA->rotation.m[1][2]), // OBB A の y 軸
+		VGet(obbA->rotation.m[2][0], obbA->rotation.m[2][1], obbA->rotation.m[2][2]), // OBB A の z 軸
+		VGet(obbB->rotation.m[0][0], obbB->rotation.m[0][1], obbB->rotation.m[0][2]), // OBB B の x 軸
+		VGet(obbB->rotation.m[1][0], obbB->rotation.m[1][1], obbB->rotation.m[1][2]), // OBB B の y 軸
+		VGet(obbB->rotation.m[2][0], obbB->rotation.m[2][1], obbB->rotation.m[2][2]), // OBB B の z 軸
+	};
+
+	// 各軸に対して分離軸を調べる
+	for (int i = 0; i < 6; ++i)
+	{
+		if (!IsAxisOverlap(obbA, obbB, axes[i]))
+		{
+			return false; // 分離軸が見つかれば当たっていない
+		}
+	}
+
+	return true; // すべての軸で分離していなければ当たり
+}
+
+bool TKRLib::Physics::IsAxisOverlap(const ColliderDataOBB* obbA, const ColliderDataOBB* obbB, const VECTOR& axis) const
+{
+	// 軸が無効な場合 (長さがゼロの軸)
+	float axisLengthSquared = VDot(axis, axis);
+	if (axisLengthSquared < 1e-6f)
+	{
+		return true; // 無効な軸に対しては重なっているとみなす
+	}
+
+	// 軸を正規化
+	VECTOR normAxis = VNorm(axis);
+
+	// OBB A の頂点を軸に投影し、最小と最大を取得
+	std::vector<VECTOR> verticesA = obbA->GetVertices();
+	float minA = VDot(verticesA[0], normAxis);
+	float maxA = minA;
+	for (const auto& vertex : verticesA)
+	{
+		float projection = VDot(vertex, normAxis);
+		if (projection < minA) minA = projection;
+		if (projection > maxA) maxA = projection;
+	}
+
+	// OBB B の頂点を軸に投影し、最小と最大を取得
+	std::vector<VECTOR> verticesB = obbB->GetVertices();
+	float minB = VDot(verticesB[0], normAxis);
+	float maxB = minB;
+	for (const auto& vertex : verticesB)
+	{
+		float projection = VDot(vertex, normAxis);
+		if (projection < minB) minB = projection;
+		if (projection > maxB) maxB = projection;
+	}
+
+	// 投影の範囲が重なっているか判定
+	if (maxA < minB || maxB < minA)
+	{
+		return false; // 重なっていない
+	}
+
+	return true; // 重なっている
+}
+
+bool TKRLib::Physics::CheckOBBSphereCollision(const ColliderDataOBB* obb, const VECTOR& obbPos, const ColliderDataSphere* sphere, const VECTOR& spherePos) const
+{
+	// 球の中心とOBBの最近接点を見つける
+	VECTOR closestPoint = spherePos;
+
+	// OBBの各軸について
+	for (int i = 0; i < 3; ++i)
+	{
+		// OBBの中心から球の中心までのベクトル
+		VECTOR axis = VGet(obb->rotation.m[i][0], obb->rotation.m[i][1], obb->rotation.m[i][2]);
+		VECTOR obbToSphere = VSub(spherePos, obbPos);
+		float distance = VDot(obbToSphere, axis);
+
+		// OBBの半分の長さを超えないように制限
+		if (distance > obb->halfSize[i]) distance = obb->halfSize[i];
+		if (distance < -obb->halfSize[i]) distance = -obb->halfSize[i];
+
+		// その軸に沿った最近接点を更新
+		closestPoint = VAdd(closestPoint, VScale(axis, distance));
+	}
+
+	// 球の中心と最近接点の距離を計算
+	VECTOR closestToSphere = VSub(closestPoint, spherePos);
+	float closestDistanceSq = VDot(closestToSphere, closestToSphere);
+
+	// 衝突判定：距離が球の半径以内なら衝突
+	return closestDistanceSq <= sphere->radius * sphere->radius;
 }

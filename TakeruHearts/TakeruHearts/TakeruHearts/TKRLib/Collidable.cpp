@@ -45,6 +45,9 @@ TKRLib::ColliderData* TKRLib::Collidable::CreateColliderData(ColliderData::Kind 
 	case TKRLib::ColliderData::Kind::Sphere:
 		colliderData = new ColliderDataSphere();
 		break;
+	case TKRLib::ColliderData::Kind::Box:
+		colliderData = new ColliderDataOBB();
+		break;
 
 	default:
 		break;

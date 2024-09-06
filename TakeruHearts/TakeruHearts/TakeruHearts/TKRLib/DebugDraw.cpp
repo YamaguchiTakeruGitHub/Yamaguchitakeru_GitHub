@@ -1,13 +1,17 @@
 #include "DebugDraw.h"
+#include <array>
+#include <utility>
+
 
 std::vector<TKRLib::DebugDraw::LineInfo> TKRLib::DebugDraw::lineInfo;
 std::vector<TKRLib::DebugDraw::SphereInfo> TKRLib::DebugDraw::sphereInfo;
-
+std::vector<TKRLib::DebugDraw::OBBInfo> TKRLib::DebugDraw::obbInfo;
 
 void TKRLib::DebugDraw::Clear()
 {
 	lineInfo.clear();
 	sphereInfo.clear();
+	obbInfo.clear();
 }
 
 void TKRLib::DebugDraw::Draw()
@@ -28,6 +32,11 @@ void TKRLib::DebugDraw::Draw()
 			5,
 			item.color,
 			item.color, false);
+	}
+
+	for (const auto& item : obbInfo)
+	{
+		DrawOBB(item.center, item.halfSize, item.rotation, item.color);
 	}
 
 }
@@ -59,5 +68,34 @@ void TKRLib::DebugDraw::DrawSphere(const VECTOR& center, float radius, int color
 	newInfo.radius = radius;
 	newInfo.color = color;
 	sphereInfo.emplace_back(newInfo);
+}
+
+void TKRLib::DebugDraw::DrawOBB(const VECTOR& center, const std::array<float, 3>& halfSize, const MATRIX& rotation, int color)
+{
+	// OBBの8つの頂点を計算
+	std::array<VECTOR, 8> vertices;
+	for (int i = 0; i < 8; ++i)
+	{
+		VECTOR offset = VGet(
+			(i & 1 ? halfSize[0] : -halfSize[0]),
+			(i & 2 ? halfSize[1] : -halfSize[1]),
+			(i & 4 ? halfSize[2] : -halfSize[2])
+		);
+
+		vertices[i] = VAdd(center, VTransform(offset, rotation));
+	}
+
+	// OBBの12本のエッジを描画
+	const std::array<std::pair<int, int>, 12> edges = { {
+		{0, 1}, {1, 3}, {3, 2}, {2, 0},
+		{4, 5}, {5, 7}, {7, 6}, {6, 4},
+		{0, 4}, {1, 5}, {3, 7}, {2, 6}
+	} };
+
+	for (const auto& edge : edges)
+	{
+		DrawLine3D(vertices[edge.first], vertices[edge.second], color);
+	}
+
 }
 

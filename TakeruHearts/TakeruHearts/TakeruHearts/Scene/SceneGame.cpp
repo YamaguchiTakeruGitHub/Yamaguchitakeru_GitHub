@@ -16,6 +16,7 @@ SceneGame::SceneGame()
 	m_GrassLand = new GrassLand;
 	m_Light = new Light::Light;
 	m_UiCommand = new UI::UICommand;
+	m_GreenGround = new GreenGround;
 }
 
 SceneGame::~SceneGame()
@@ -41,6 +42,8 @@ SceneGame::~SceneGame()
 	delete(m_Light);
 	m_UiCommand = nullptr;
 	delete(m_UiCommand);
+	m_GreenGround = nullptr;
+	delete(m_GreenGround);
 }
 
 void SceneGame::Init()
@@ -57,6 +60,7 @@ void SceneGame::Init()
 	m_Mischar->Init(physics);
 	m_Tree->Init();
 	m_GrassLand->Init();
+	m_GreenGround->Init(physics);
 	m_Light->Init();
 	m_UiCommand->Init();
 }
@@ -77,9 +81,23 @@ void SceneGame::Update()
 	m_Mischar->Update();
 	m_Tree->Update();
 	m_GrassLand->Update();
+	m_GreenGround->Update();
 	m_Light->Update();
 	m_UiCommand->Update();
 	TKRLib::DebugDraw::Clear();
+
+	// プレイヤーのデバッグ描画
+	TKRLib::DebugDraw::DrawSphere(player->GetPos(), 1.0f, GetColor(255, 0, 0)); // 赤い球を描画
+
+	// GreenGroundのデバッグ描画
+	auto boxColliderData = dynamic_cast<TKRLib::ColliderDataOBB*>(m_GreenGround->GetColliderData());
+	if (boxColliderData)
+	{
+		TKRLib::DebugDraw::DrawOBB(boxColliderData->center, boxColliderData->halfSize, boxColliderData->rotation, GetColor(0, 255, 0)); // 緑のOBBを描画
+	}
+
+	TKRLib::DebugDraw::Draw();
+
 }
 
 void SceneGame::Draw()
@@ -93,6 +111,7 @@ void SceneGame::Draw()
 	m_SkyDome->Draw();
 	m_Tree->Draw();
 	m_GrassLand->Draw();
+	m_GreenGround->Draw();
 	m_Light->Draw();
 	m_UiCommand->Draw();
 	TKRLib::DebugDraw::Draw();
@@ -108,6 +127,7 @@ void SceneGame::End()
 	m_Mischar->Final(physics);
 	m_Tree->Final();
 	m_GrassLand->Final();
+	m_GreenGround->Final(physics);
 	m_Light->Final();
 	m_UiCommand->Final();
 }

@@ -1,8 +1,7 @@
-﻿  SceneGame.cpp
-C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+﻿  GreenGround.cpp
   コード生成しています。
-  4 of 807 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  2 of 917 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
-  TakeruHearts.vcxproj -> C:\Users\fko2347069\Desktop\Yamaguchitakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Release\TakeruHearts.exe
+  TakeruHearts.vcxproj -> C:\Users\yamag\OneDrive\Desktop\YamaguchiTakeru_GitHub\Yamaguchitakeru_GitHub\TakeruHearts\TakeruHearts\x64\Release\TakeruHearts.exe

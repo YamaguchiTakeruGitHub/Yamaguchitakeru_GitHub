@@ -13,6 +13,7 @@
 #include "../UI/Command/UICommand.h"
 
 
+
 class SceneGame final
 	: public SceneBase
 {
@@ -34,6 +35,7 @@ private:
 	SkyDome* m_SkyDome;
 	Tree* m_Tree;
 	GrassLand* m_GrassLand;
+	GreenGround* m_GreenGround;
 	Light::Light* m_Light;
 	UI::UICommand* m_UiCommand;
 

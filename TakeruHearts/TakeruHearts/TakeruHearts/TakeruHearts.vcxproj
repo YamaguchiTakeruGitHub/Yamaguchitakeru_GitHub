@@ -144,9 +144,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation\AnimationManager.cpp" />
+    <ClCompile Include="TKRLib\ColliderDataOBB.cpp" />
     <ClCompile Include="Math\Matrix.cpp" />
     <ClCompile Include="SpeechBubble.cpp" />
-    <ClCompile Include="TKRLib\ColliderDataBox.cpp" />
     <ClCompile Include="Light\Light.cpp" />
     <ClCompile Include="Math\Quaternion.cpp" />
     <ClCompile Include="UI\Command\UICommand.cpp" />
@@ -186,9 +186,9 @@
   <ItemGroup>
     <ClInclude Include="Animation\AnimationManager.h" />
     <ClInclude Include="Animation\AnimationData.h" />
+    <ClInclude Include="TKRLib\ColliderDataOBB.h" />
     <ClInclude Include="Math\Matrix.h" />
     <ClInclude Include="SpeechBubble.h" />
-    <ClInclude Include="TKRLib\ColliderDataBox.h" />
     <ClInclude Include="CommonScene.h" />
     <ClInclude Include="Light\Light.h" />
     <ClInclude Include="LocalTag.h" />

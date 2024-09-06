@@ -33,6 +33,8 @@ private:
 
 	bool isMove;
 
+	static constexpr float JumpPower = 0.8f;
+
 	InputDevice::InputDeviceManager* idm;
 
 	AnimationManager animationManager;

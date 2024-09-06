@@ -2,7 +2,7 @@
 #include "../TKRLib/TKRLib.h"
 #include <list>
 #include <vector>
-
+#include <cmath>
 namespace TKRLib
 {
 	class Collidable;
@@ -14,6 +14,10 @@ namespace TKRLib
 		void Exit(Collidable* collidable);
 
 		void Update();
+
+		// èdóÕÇ∆ç≈ëÂèdóÕâ¡ë¨ìx
+		static constexpr float Gravity = -0.01f;
+		static constexpr float MaxGravityAccel = -0.15f;
 
 	private:
 
@@ -38,7 +42,12 @@ namespace TKRLib
 		void FixNextPosition(Collidable* primary, Collidable* secondary)const;
 		void FixPosition();
 
-		//bool CheckOBBCollision3D(const Box& a, const )
-		
+		bool CheckOBBOverlap(const ColliderDataOBB* obbA, const ColliderDataOBB* obbB)const;
+
+		bool IsAxisOverlap(const ColliderDataOBB* obbA, const ColliderDataOBB* obbB, const VECTOR& axis)const;
+
+		bool CheckOBBSphereCollision(const ColliderDataOBB* obb, const VECTOR& obbPos, const ColliderDataSphere* sphere, const VECTOR& spherePos) const;
+
+		VECTOR VAbs(const VECTOR& v) { return VGet(std::abs(v.x), std::abs(v.y), std::abs(v.z)); }
 	};
 }
